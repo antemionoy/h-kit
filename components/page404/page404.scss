@@ -1,0 +1,26 @@
+.page404 {
+  &__h1 {
+    margin-bottom: 32px;
+    max-width: 100%;
+    font-weight: 300;
+    font-size: 120px;
+
+    @include mobile {
+     font-size: 60px;
+    }
+  }
+
+  &__text {
+    max-width: 728px;
+    margin-bottom: 84px;
+
+    @include mobile {
+      max-width: 100%;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__links {
+    padding-bottom: 14px;
+  }
+}

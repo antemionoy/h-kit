@@ -1,0 +1,19 @@
+query AboutCollections {
+  about_collections {
+    id
+    kitchen {
+      id
+      title
+      slug
+      price
+      discount_price
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

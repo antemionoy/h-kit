@@ -1,0 +1,63 @@
+.history {
+  padding-top: 160px;
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+    padding-bottom: 0;
+
+    &.product-video {
+      padding-top: 100px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @media screen and (max-width: $mobile) {
+      display: block;
+    }
+  }
+  &__video {
+    flex-shrink: 0;
+    width: 50%;
+    margin-right: 105px;
+    @media screen and (max-width: $mobile) {
+      margin-right: 0;
+      width: calc(100% + 32px);
+      margin: 0 -16px 32px;
+    }
+  }
+  &__card {
+    max-width: 470px;
+  }
+  &__title {
+    margin-bottom: 35px;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+  &__description {
+    margin-bottom: 65px;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+  &__note {
+    padding: 140px 100px 0px;
+    @media screen and (max-width: $tablet) {
+     padding: 100px 0px 0px;
+    }
+
+    @media screen and (max-width: $mobile) {
+      padding: 40px 0px 0px;
+    }
+  }
+  &__note-title {
+    margin-bottom: 60px;
+
+    @include mobile {
+      margin-bottom: 17px;
+    }
+  }
+}

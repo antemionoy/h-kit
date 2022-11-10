@@ -1,0 +1,107 @@
+@import 'variables';
+@import 'mixins';
+.catalog-slider {
+  position: relative;
+  padding-top: 133px;
+  @media screen and (max-width: $tablet) {
+    padding-top: 215px;
+  }
+  @media screen and (max-width: $mobile) {
+    padding-top: 139px;
+  }
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 33px;
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 56px;
+      display: block;
+    }
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 33px;
+    }
+  }
+  &__preview {
+    width: calc(50% - 12px);
+    position: relative;
+  }
+  &__content {
+    width: calc(50% - 16px);
+    padding-left: calc(103px - 16px);
+    @media screen and (max-width: $tablet) {
+      width: auto;
+      max-width: 540px;
+      padding-left: 0;
+    }
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 33px;
+    }
+  }
+  &__title {
+    padding-bottom: 34px;
+    @media screen and (max-width: $tablet) {
+      max-width: 300px;
+    }
+    @media screen and (max-width: $mobile) {
+      max-width: 265px;
+    }
+  }
+  &__description {
+    padding-bottom: 56px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 30px;
+    }
+  }
+  &__preview-item {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: auto;
+    &::after {
+      content: '';
+      display: block;
+      padding-top: 70%;
+    }
+  }
+  &__preview-controls {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    margin: 0 -6px;
+  }
+  &__preview-control {
+    margin: 0 6px;
+    background-color: rgba($white, 0.4);
+  }
+  &__card {
+    max-width: none;
+    margin-bottom: 60px;
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 35px;
+    }
+  }
+  &__swiper-container {
+    width: 100%;
+    position: relative;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list-wrap {
+    @media screen and (max-width: 500px) {
+      max-width: 80%;
+    }
+  }
+  &__list-item {
+    width: calc(25% - 16px);
+    max-width: none;
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+}

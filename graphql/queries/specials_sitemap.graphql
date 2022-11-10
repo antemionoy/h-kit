@@ -1,0 +1,10 @@
+query SpecialOffers {
+  special_offers {
+    pagination {
+      total
+    }
+    data {
+      slug
+    }
+  }
+}

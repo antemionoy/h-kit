@@ -1,0 +1,140 @@
+@import 'variables';
+@import 'mixins';
+
+.policy {
+  &__title {
+    margin: 70px 0 51px;
+  }
+
+  & .numeric-list__item {
+    display: flex;
+    flex-wrap: wrap;
+    min-height: auto;
+    padding-left: 0;
+    &:before {
+      flex-shrink: 0;
+      position: static;
+      display: inline-block;
+    }
+  }
+  .policy__list-item {
+    &:not(:first-child) {
+      margin-top: 80px;
+    }
+    @include mobile {
+      &:before {
+        position: absolute;
+        top: 0;
+        left: -4px;
+      }
+    }
+  }
+  &__list {
+    &-title {
+      display: flex;
+      align-items: center;
+      margin-left: 29px;
+      max-width: 90%;
+      @include tablet {
+        margin-left: 17px;
+        max-width: 83%;
+      }
+      @include mobile {
+        max-width: none;
+        margin-left: 43px;
+        width: 100%;
+        min-height: 40px;
+      }
+    }
+
+    @include tablet {
+      & .numeric-list__item {
+        &:before {
+          width: 51px;
+          height: 51px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          @include mobile {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+
+    &-text {
+      transform: translate(-3px, -9px);
+      width: 96%;
+
+      @include tablet {
+        transform: none;
+      }
+    }
+  }
+
+  &__sublist {
+    padding-left: 100px;
+    width: 100%;
+    @include tablet {
+      padding-left: 69px;
+    }
+    @include mobile {
+      padding-left: 0;
+    }
+    & &-item {
+      flex-wrap: nowrap;
+    }
+
+    &-text {
+      margin-left: 37px;
+      display: flex;
+      align-items: center;
+
+      @include tablet {
+        margin-left: 28px;
+      }
+      @include mobile {
+        margin-left: 12px;
+      }
+    }
+    .policy__list-text + .numeric-list__item {
+      margin-top: 34px;
+    }
+    & .numeric-list__item {
+      margin-top: 27px;
+
+      &:before {
+        width: 51px;
+        height: 51px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+
+        @include mobile {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+
+  &__specials {
+    margin-top: 54px;
+    &-title {
+      margin-bottom: 40px;
+    }
+    margin-bottom: 120px;
+
+    @include tablet {
+      margin-bottom: 80px;
+    }
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+}

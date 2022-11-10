@@ -1,0 +1,111 @@
+@import 'variables'; @import 'mixins';
+
+$num-size--lg: 67px;
+$num-size--sm: 32px;
+
+.numeric-list {
+  counter-reset: num;
+  padding-top: 9px;
+
+  @media screen and (max-width: $tablet) {
+    padding-top: 0;
+  }
+
+  &__item {
+    position: relative;
+    min-height: $num-size--lg;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+    &::before {
+      position: absolute;
+      left: -95px;
+      top: -9px;
+      content: counter(num);
+      counter-increment: num;
+      display: inline-block;
+      width: $num-size--lg;
+      height: $num-size--lg;
+      line-height: $num-size--lg;
+      border-radius: 50%;
+      text-align: center;
+      background-color: $white_main;
+      color: $black_common;
+      font-weight: 600;
+      font-size: 18px;
+
+      @media screen and (max-width: $tablet) {
+        width: $num-size--sm;
+        height: $num-size--sm;
+        line-height: $num-size--sm;
+        left: 0;
+        top: 0;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      min-height: $num-size--sm;
+      padding-left: 42px;
+    }
+
+    & + & {
+      margin-top: 41px;
+
+      @media screen and (max-width: $tablet) {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  &__title {
+    min-height: $num-size--lg;
+    margin-bottom: 23px;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      min-height: $num-size--sm;
+    }
+  }
+
+  &--inside {
+
+    .numeric-list__header {
+      margin-bottom: 60px;
+      display: inline-block;
+      margin-left: 32px;
+      max-width: calc(100% - #{$num-size--lg + 32px});
+      min-height: $num-size--lg;
+      width: 820px;
+
+      @include tablet {
+        margin-bottom: 30px;
+        max-width: calc(100% - #{$num-size--sm + 10px});
+        margin-left: 10px;
+        min-height: $num-size--sm;
+      }
+    }
+
+    .numeric-list__item::before {
+      position: static;
+      float: left;
+      color: $green-main;
+      background-color: $green_common;
+    }
+
+    .numeric-list__item {
+      padding-left: 0;
+    }
+  }
+
+  &--page {
+    .numeric-list__item + .numeric-list__item {
+      margin-top: 116px;
+
+      @media screen and (max-width: $tablet) {
+        margin-top: 40px;
+      }
+    }
+  }
+}

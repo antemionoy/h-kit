@@ -1,0 +1,13 @@
+.header-item-mixers {
+  &__wrapper {
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+  }
+  & &__card {
+    width: calc(25% - 25px);
+  }
+  & &__preview {
+    width: calc(50% - 25px);
+  }
+}

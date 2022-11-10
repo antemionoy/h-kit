@@ -1,0 +1,3 @@
+mutation FAQQuestion($name: String!, $phone: String!, $message: String!) {
+  FAQQuestion(name: $name, phone: $phone, message: $message)
+}

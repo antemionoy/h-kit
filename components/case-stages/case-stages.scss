@@ -1,0 +1,74 @@
+@import 'variables';
+@import 'mixins';
+
+.case-stages {
+  padding-top: 140px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__title {
+    padding-bottom: 70px;
+    max-width: 840px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 37px;
+    }
+  }
+  &__images {
+    position: relative;
+    margin-bottom: 50px;
+    img {
+      width: 100%;
+    }
+  }
+  &__counter {
+    position: absolute;
+    bottom: 0;
+    left: 40px;
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    background-color: $green_common;
+    color: $green_main;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(30%);
+    z-index: 5;
+  }
+  &__swiper {
+    position: relative;
+    .swiper-wrapper {
+      @media screen and (max-width: $mobile) {
+        padding-bottom: 30px;
+      }
+    }
+  }
+  .swiper-pagination {
+    @include min-mobile {
+      display: none;
+    }
+  }
+  &__subtitle {
+    padding-bottom: 14px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 20px;
+    }
+  }
+  &__description {
+    max-width: 650px;
+  }
+  &__controls {
+    display: flex;
+    margin: 0 -6px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 5;
+  }
+  &__control {
+    margin: 0 6px;
+  }
+}

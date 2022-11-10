@@ -1,0 +1,23 @@
+query AboutMassMedias {
+  about_mass_medias {
+    id
+    title
+    link
+    date
+    source
+    source_logo {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+    preview {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

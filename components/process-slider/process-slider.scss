@@ -1,0 +1,86 @@
+@import 'variables';
+@import 'mixins';
+.process-slider {
+  &.main__process,
+  &.production__process {
+    margin-top: 160px;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 100px;
+    }
+  }
+  &.kitchen__process {
+    margin-top: 160px;
+    margin-bottom: 160px;
+
+    @media screen and (max-width: $mobile) {
+      margin-top: 100px;
+      margin-bottom: 100px;
+    }
+  }
+  &.production__process &__title {
+    max-width: none;
+  }
+  &__title {
+    padding-bottom: 35px;
+    max-width: 400px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 65px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+    }
+  }
+  &__description {
+    max-width: 505px;
+    flex-shrink: 0;
+    @media screen and (max-width: $tablet) {
+      flex-shrink: 1;
+      flex: 1;
+      margin-right: 30px;
+    }
+  }
+  &__controls {
+    display: flex;
+    margin: 0 -6px;
+    @media screen and (max-width: $tablet) {
+      flex-shrink: 0;
+    }
+  }
+  &__control {
+    margin: 0 6px;
+  }
+  &__item-wrap {
+    width: auto;
+    height: auto;
+  }
+  &__item {
+    height: 100%;
+    cursor: pointer;
+  }
+  &__swiper {
+    padding-bottom: 56px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+    }
+  }
+  &__swiper-container {
+    overflow: initial;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -12px;
+      left: -12px;
+      bottom: -12px;
+      width: 100vw;
+      transform: translateX(-100%);
+      background-color: $white;
+      z-index: 2;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@import 'variables'; @import 'mixins';
+
+.category-link {
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: $black_title;
+  transition: color 0.3s ease 0s;
+  text-transform: uppercase;
+  cursor: pointer;
+  &:hover, &--active {
+    color: $green_main;
+  }
+}

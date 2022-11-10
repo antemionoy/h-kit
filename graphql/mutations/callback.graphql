@@ -1,0 +1,3 @@
+mutation CallBack($name: String!, $phone: String!, $when: String!) {
+  CallBack(name: $name, phone: $phone, when: $when)
+}

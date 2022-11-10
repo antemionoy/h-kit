@@ -1,0 +1,16 @@
+query KitchenFilter {
+  kitchen_filter {
+    form {
+      name
+      slug
+    }
+    style {
+      name
+      slug
+    }
+    facade {
+      name
+      slug
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import 'variables'; @import 'mixins';
+.case-heroes {
+  padding-top: 120px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__title {
+    padding-bottom: 60px;
+    max-width: 570px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+    }
+  }
+}

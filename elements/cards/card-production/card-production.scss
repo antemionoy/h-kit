@@ -1,0 +1,34 @@
+@import 'variables'; @import 'mixins';
+
+.card-production{
+  width: 592px;
+  cursor: pointer;
+  overflow: hidden;
+  @media screen and (max-width: $mobile) {
+    width: 264px;
+  }
+  &__image {
+    padding-top: 60%;
+    position: relative;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  &__content {
+    padding: 34px 0 0;
+  }
+  &__title {
+    padding-bottom: 25px;
+  }
+  &__description {
+    min-height: 22px;
+    max-width: 370px;
+    white-space: break-spaces;
+  }
+}

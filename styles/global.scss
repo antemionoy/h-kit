@@ -1,0 +1,133 @@
+@import 'variables';
+@import 'mixins';
+
+html {
+  font-size: 16px;
+  font-family: Euclid Circular;
+}
+body {
+  scroll-behavior: smooth !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $white;
+  line-height: 1.5;
+  font-family: Euclid Circular;
+  margin: auto;
+  position: relative;
+  &::after {
+    content: '';
+    display: block;
+    background-color: rgba($black, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    z-index: 10;
+    pointer-events: none;
+  }
+  &.menu-open {
+    &::after {
+      opacity: 1;
+      z-index: 3;
+      pointer-events: initial;
+    }
+  }
+  &.mobile-menu-open {
+    &::after {
+      opacity: 1;
+      z-index: 20;
+      pointer-events: initial;
+    }
+  }
+}
+#__next {
+  position: relative;
+}
+input,
+textarea,
+button {
+  font-family: Euclid Circular;
+}
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+.ui-kit {
+  &__section {
+    padding: 50px 40px 100px;
+    &--gray {
+      margin-top: -100px;
+      background-color: #505050;
+    }
+    &--white {
+      margin-top: -100px;
+      background-color: #dcdbdb;
+      & > div {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  &__block {
+    padding-bottom: 40px;
+    &--paragraph {
+      max-width: 400px;
+    }
+  }
+  &__title {
+    font-size: 70px;
+    font-weight: bold;
+    padding-bottom: 70px;
+  }
+}
+.swiper-pagination {
+  position: absolute;
+  text-align: center;
+  transform: translate3d(0px, 0px, 0px);
+  z-index: 10;
+  transition: opacity 300ms ease 0s;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+}
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-radius: 100%;
+  background-color: $black_common;
+  opacity: 0.3;
+  margin: 0px 6px;
+  cursor: pointer;
+  &-active {
+    background-color: $green_btn_active;
+    opacity: 1;
+  }
+}
+
+.scroll-lock-hidden {
+  overflow: hidden;
+}
+.scroll-lock {
+  overflow-y: scroll;
+  position: fixed;
+  right: 0;
+  left: 0;
+
+  &::after {
+    opacity: 1;
+    pointer-events: initial;
+  }
+}
+
+input,
+select,
+textarea {
+  // цвет на ios
+  -webkit-text-fill-color: $black_text;
+  opacity: 1;
+}

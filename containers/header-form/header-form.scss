@@ -1,0 +1,214 @@
+@import 'variables';
+
+.header-form {
+  &__title {
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    &:hover {
+      color: $green_main;
+    }
+    & > span {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  & .modal__close {
+    display: block;
+    position: relative;
+    top: 4px;
+    left: 13px;
+    right: 0;
+    bottom: 0;
+    transform: none;
+    @include mobile {
+      background: none;
+      top: 0;
+      left: 0;
+    }
+    &:after,
+    &:before {
+      width: 22px;
+      left: calc(50% - 11px);
+    }
+  }
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    width: 100%;
+    max-width: 432px;
+    right: 0;
+    padding: 45px 45px 72px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease 0s;
+    background-color: $white;
+    box-shadow: 0px 0px 14px rgba(black, 0.15);
+    border-radius: 15px;
+    display: none;
+    &--active {
+      pointer-events: initial;
+      opacity: 1;
+    }
+    @media screen and (max-width: $mobile) {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      overflow: scroll;
+      min-width: 0;
+      padding: 20px 16px 50px;
+      margin-top: 50px;
+      border-radius: 0;
+    }
+  }
+  .form {
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      &--with-caption {
+        margin-bottom: 7px;
+      }
+    }
+    &__caption {
+      margin-top: 6px;
+      font-size: 14px;
+    }
+    &__call-caption {
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 140%;
+      margin-top: 28px;
+      margin-bottom: 15px;
+    }
+    &__header--with-caption + p {
+      margin-bottom: 45px;
+    }
+    &__subtitle {
+      margin-bottom: 10px;
+      margin-top: 39px;
+      &--empty {
+        margin-top: 27px;
+        margin-bottom: 0;
+      }
+    }
+    &__phone {
+      margin-top: 32px;
+      &:hover {
+        color: $green_main;
+      }
+    }
+    &__field {
+      margin-bottom: 15px !important;
+      &--selector {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .input {
+        width: 100%;
+      }
+    }
+    &__description {
+      margin-bottom: 26px;
+      font-size: 14px;
+      line-height: 140%;
+      color: $black_title;
+      &--empty {
+        margin-bottom: 0;
+      }
+    }
+    &__time-now {
+      height: 50px;
+      border-radius: 60px;
+      font-size: 13px;
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $black_common;
+      background-color: $white_main;
+      margin-right: 8px;
+      flex: 1;
+      cursor: pointer;
+      transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+      &--active {
+        background-color: $green_main;
+        color: $black_title;
+      }
+    }
+    &__submit {
+      margin-top: 37px;
+      margin-bottom: 17px;
+
+      &-message {
+        margin-top: 25px;
+        max-width: none;
+      }
+    }
+    &__link {
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 120%;
+      color: $black_common;
+      max-width: 250px;
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+    &__select {
+      max-width: calc(50% - 5px);
+
+      @include tablet {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+
+    &__input--sibling {
+      max-width: calc(50% - 5px);
+
+      @include tablet {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &--footer {
+    .header-form__dropdown {
+      position: fixed;
+      bottom: 30px;
+      top: auto;
+      right: auto;
+      transform: translateX(calc(-100% - 15px));
+      z-index: 50;
+      @media screen and (max-height: 730px) {
+        top: 15px;
+        bottom: auto;
+      }
+      @include tablet {
+        left: $padding-tablet + 200px;
+        max-width: 432px;
+        transform: translateX(0);
+      }
+      @media screen and (max-width: $mobile) {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: scroll;
+        max-width: 100%;
+        padding: 20px 16px 50px;
+        margin-top: 50px;
+        border-radius: 0;
+      }
+    }
+  }
+}

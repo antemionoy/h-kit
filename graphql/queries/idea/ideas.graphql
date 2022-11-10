@@ -1,0 +1,86 @@
+query Ideas($slug: String) {
+  ideas(slug: $slug) {
+    data {
+      id
+      title
+      slug
+      description
+      image {
+        path {
+          normal
+          retina
+        }
+      }
+      blocks {
+        id
+        number
+        type
+        head
+        title
+        material_image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        text
+        gallery {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        content_block {
+          image {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+          text
+          title
+        }
+        materials {
+          id
+          type
+          title
+          slug
+          summary
+          category {
+            slug
+          }
+          preview {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+          preview_hover {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+        }
+      }
+      related {
+        id
+        title
+        slug
+        label
+        description
+        image {
+          path {
+            normal
+            retina
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+mutation Order(
+  $kitchen_id: Int
+  $material_id: Int
+  $sink_id: Int
+  $technic_id: Int
+  $name: String!
+  $phone: String!
+  $message: String!
+  $type: String
+  $params: String
+) {
+  Order(
+    kitchen_id: $kitchen_id
+    name: $name
+    phone: $phone
+    message: $message
+    type: $type
+    params: $params
+    material_id: $material_id
+    sink_id: $sink_id
+    technic_id: $technic_id
+  )
+}

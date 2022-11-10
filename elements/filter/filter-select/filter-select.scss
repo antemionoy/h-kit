@@ -1,0 +1,167 @@
+@import 'variables';
+@import 'mixins';
+
+.filter-select {
+  position: relative;
+  &__button {
+    width: 100%;
+    background-color: transparent;
+    height: 56px;
+    padding: 0 20px;
+    border: 1px solid rgba(139, 143, 147, 0.1);
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      width: 13px;
+      height: 8px;
+      flex-shrink: 0;
+      margin-left: 7px;
+      color: currentColor;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease 0s;
+    }
+    &--open svg {
+      transform: rotate(180deg);
+    }
+  }
+  &__button-text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: $black_title;
+  }
+  &__button-count {
+    font-weight: 500;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $green_main;
+    background-color: $green_common;
+    border-radius: 3px;
+    padding: 6px;
+    flex-shrink: 0;
+    margin-left: 10px;
+    min-width: 23px;
+  }
+  &__dropdown {
+    @include hidden-scrollbar;
+    position: absolute;
+    box-shadow: 0px 0px 10px rgba(black, 0.2);
+    top: calc(100% + 2px);
+    left: 0;
+    width: 100%;
+    background-color: $white;
+    border-radius: 12px;
+    padding: 20px 20px 0 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    pointer-events: none;
+    z-index: 6;
+    overflow: auto;
+    max-height: 400px;
+    &--active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+  &__reset {
+    width: calc(100% + 40px);
+    height: 56px;
+    background-color: $white_main;
+    border: none;
+    margin-left: -20px;
+    color: $black_common;
+    font-weight: 300;
+    font-size: 16px;
+    cursor: pointer;
+    &--disabled {
+      pointer-events: none;
+      outline: none;
+      cursor: initial;
+    }
+  }
+  &__option {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 160%;
+    color: $black_title;
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    margin-bottom: 7px;
+    transition: color 0.3s ease 0s;
+    cursor: pointer;
+    &--active {
+      color: $green_main;
+    }
+    &:hover {
+      color: $green_main;
+    }
+    svg {
+      min-width: 20px;
+    }
+  }
+  &__option-icon {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 34px;
+    height: 34px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    margin-right: 15px;
+    transition: border-color 0.3s ease 0s;
+
+    &--round {
+      border-radius: 50%;
+    }
+  }
+  &__option-icon-wrapper {
+    overflow: hidden;
+
+    span,
+    img {
+      width: 24px;
+      height: 24px;
+      display: block !important;
+      object-fit: cover;
+    }
+    &--round {
+      border-radius: 50%;
+    }
+  }
+  &__option-checkbox {
+    width: 20px;
+    height: 20px;
+    margin-right: 25px;
+    border-radius: 3px;
+    border: 1px solid $black_title;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: transparent;
+    transition: color 0.3s ease 0s, border-color 0.3s ease 0s;
+  }
+  &__option:hover &__option-icon {
+    border-color: $green_main;
+  }
+  &__option--active &__option-icon {
+    border-color: $green_main;
+  }
+  &__option:hover &__option-checkbox {
+    border-color: $green_main;
+    color: $green_main;
+  }
+  &__option--active &__option-checkbox {
+    border-color: $green_main;
+    color: $green_main;
+  }
+}

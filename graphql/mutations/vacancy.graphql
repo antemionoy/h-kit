@@ -1,0 +1,13 @@
+mutation Vacancy(
+  $vacancy_id: Int
+  $name: String!
+  $phone: String!
+  $message: String!
+) {
+  Vacancy(
+    vacancy_id: $vacancy_id
+    name: $name
+    phone: $phone
+    message: $message
+  )
+}

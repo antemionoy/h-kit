@@ -1,0 +1,13 @@
+query Environments {
+  environments {
+    id
+    title
+    description
+    image {
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

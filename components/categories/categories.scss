@@ -1,0 +1,80 @@
+@import 'variables';
+@import 'mixins';
+
+.categories {
+  padding-top: 166px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  &.process__categories {
+    padding-top: 120px;
+  }
+  @media screen and (max-width: $tablet) {
+    padding-top: 160px;
+    flex-direction: column-reverse;
+  }
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__cards {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      display: block;
+      margin-bottom: -65px;
+    }
+  }
+  &__card {
+    width: calc(50% - 20px);
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      margin-bottom: 65px;
+    }
+  }
+  &__content {
+    flex-shrink: 0;
+    margin-left: 63px;
+    max-width: 467px;
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      max-width: none;
+      margin-left: 0;
+      margin-bottom: 65px;
+    }
+  }
+  &__caption {
+    padding-bottom: 16px;
+    color: $gray_caption_step;
+  }
+  &__title {
+    padding-bottom: 26px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 40px;
+    }
+  }
+  &__text {
+    padding-bottom: 26px;
+    max-width: 405px;
+  }
+  &__brands {
+    display: flex;
+  }
+  &__brand {
+    width: 120px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white_main;
+    margin-right: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+    span {
+      display: block;
+      max-width: 80%;
+    }
+  }
+}

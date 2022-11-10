@@ -1,0 +1,7 @@
+.step-9 {
+  padding-top: 120px;
+ 
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+}

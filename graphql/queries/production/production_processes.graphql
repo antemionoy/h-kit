@@ -1,0 +1,13 @@
+query ProductionProcesses {
+  production_processes {
+    id
+    name
+    description
+    image {
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

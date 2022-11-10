@@ -1,0 +1,24 @@
+.process-main {
+  padding-top: 60px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 50px;
+  }
+  &__title {
+    padding-bottom: 40px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+    }
+  }
+  &__description {
+    max-width: 600px;
+    padding-bottom: 50px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 30px;
+    }
+  }
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}

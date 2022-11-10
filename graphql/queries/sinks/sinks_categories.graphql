@@ -1,0 +1,13 @@
+query SinksCategories {
+  sinks_categories {
+    id
+    name
+    slug
+    description
+    tags {
+      id
+      name
+      slug
+    }
+  }
+}

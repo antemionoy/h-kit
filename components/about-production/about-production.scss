@@ -1,0 +1,34 @@
+@import 'variables'; @import 'mixins';
+.about-production {
+  padding-top: 160px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__title {
+    padding-bottom: 60px;
+    max-width: 570px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+    }
+  }
+  &__content {
+    margin-bottom: 160px;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 100px;
+    }
+  }
+  &__note {
+    max-width: 1000px;
+    margin: 0 auto;
+    @media screen and (max-width: $mobile) {
+      margin: 0;
+    }
+  }
+  &__note-title {
+    padding-bottom: 45px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 32px;
+    }
+  }
+}

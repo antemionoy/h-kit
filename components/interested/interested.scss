@@ -1,0 +1,89 @@
+@import 'variables'; @import 'mixins';
+
+.interested {
+  padding-top: 109px;
+  padding-bottom: 128px;
+  background-color: $white_main;
+  @media screen and (max-width: $tablet) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media screen and (max-width: $mobile) {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 50px;
+    @media screen and (max-width: $tablet) {
+      padding-bottom: 65px;
+    }
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 40px;
+    }
+  }
+  &__controls {
+    display: flex;
+    margin: 0 -6px;
+    @media screen and (max-width: $tablet) {
+      flex-shrink: 0;
+      margin-left: 20px;
+    }
+  }
+  &__control {
+    margin: 0 6px;
+  }
+  &__swiper-container {
+    overflow: initial;
+    position: relative;
+  }
+  &__swiper {
+    @media screen and (max-width: $mobile) {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      margin-right: -16px;
+      &::after {
+        content: '';
+        display: block;
+        width: 16px;
+        flex-shrink: 0;
+      }
+    }
+  }
+  &__item-wrap {
+    height: auto;
+    transition: opacity 0.3s ease 0s;
+    @media screen and (min-width: $tablet) {
+      &.swiper-slide-next + & + & + & {
+        opacity: 0.3;
+      }
+    }
+    @media screen and (min-width: $mobile) and (max-width: $tablet) {
+      &.swiper-slide-next + & {
+        opacity: 0.3;
+      }
+    }
+    @media screen and (max-width: $mobile) {
+      width: auto;
+    }
+    &.swiper-slide-prev {
+      opacity: 0.3;
+    }
+  }
+  &__item {
+    height: 100%;
+    max-width: none;
+    @media screen and (max-width: $mobile) {
+      width: 66%;
+      margin-right: 16px;
+      flex-shrink: 0;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

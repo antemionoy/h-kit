@@ -1,0 +1,27 @@
+@import 'variables'; @import 'mixins';
+
+.offer {
+  &__button {
+    margin-top: 60px;
+
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+
+  &__h2 {
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__list {
+    padding-top: 20px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,13 @@
+query Productions($width: Int = 1184, $height: Int = 758) {
+  productions {
+    id
+    description
+    image {
+      id
+      path(width: $width, height: $height) {
+        normal
+        retina
+      }
+    }
+  }
+}

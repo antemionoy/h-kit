@@ -1,0 +1,42 @@
+@import 'variables'; @import 'mixins';
+
+.button-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: $white_main;
+  color: $green_arrow;
+  transition: all 0.3s ease 0s;
+  outline: none;
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  &--circle {
+    border-radius: 50%;
+  }
+  &--gray {
+    color: $white;
+    background-color: $gray_controls;
+  }
+  &--white {
+    background-color: $white;
+  }
+  &--reverse {
+    svg {
+      transform: scale(-1, 1);
+    }
+  }
+  &:hover {
+    transform: scale(1.1);
+  }
+  svg {
+    width: 12px;
+    height: 16px;
+  }
+}

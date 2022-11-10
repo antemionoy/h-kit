@@ -1,0 +1,116 @@
+@import 'variables';
+
+.product-grid {
+  margin-top: 60px;
+  @media screen and (max-width: $mobile) {
+    margin-top: 40px;
+  }
+
+  &__layout {
+    display: flex;
+    flex-wrap: wrap;
+    @include mobile {
+      justify-content: center;
+    }
+
+    + .more {
+      margin-top: 90px;
+      margin-bottom: 120px;
+      @media screen and (max-width: $mobile) {
+        margin-top: 55px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  &__card {
+    width: calc(33% - 25px);
+
+    &:not(:nth-of-type(3n)) {
+      margin-right: 25px;
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 50px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: calc(50% - 25px);
+      margin-right: 50px;
+
+      &:not(:nth-of-type(3n)) {
+        margin-right: 50px;
+
+        @include mobile {
+          margin-right: 0;
+        }
+      }
+
+      &:nth-child(n + 4) {
+        margin-top: 0;
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: 40px;
+      }
+
+      &:nth-of-type(2n) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      margin-right: 0;
+
+      &:not(:first-child) {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  &--4 .product-grid__card {
+    width: calc(25% - 24px);
+
+    &:not(:nth-of-type(3n)) {
+      margin-right: 0;
+    }
+
+    &:nth-child(n + 4) {
+      margin-top: 0;
+    }
+
+    &:not(:nth-of-type(4n)) {
+      margin-right: 32px;
+    }
+
+    &:nth-child(n + 5) {
+      margin-top: 54px;
+    }
+
+    @media screen and (max-width: $tablet) {
+      width: calc(50% - 16px);
+
+      &:not(:nth-of-type(4n)) {
+        margin-right: 0;
+      }
+
+      &:not(:nth-of-type(2n)) {
+        margin-right: 32px;
+      }
+
+      &:nth-child(n + 3) {
+        margin-top: 54px;
+      }
+    }
+
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      margin-right: 0;
+
+      &:not(:nth-of-type(4n)) {
+        margin-right: 0;
+      }
+    }
+  }
+}

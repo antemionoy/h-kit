@@ -1,0 +1,14 @@
+@import 'variables'; @import 'mixins';
+
+.nav-link {
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: $gray_header;
+  transition: color 0.3s ease 0s;
+  &:hover {
+    color: $gray_header_hover;
+  }
+  &--bold {
+    font-weight: 500;
+  }
+}

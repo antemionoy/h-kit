@@ -1,0 +1,32 @@
+query Cases($is_home: Boolean, $is_catalog: Boolean, $slug: String) {
+  cases(is_home: $is_home, is_catalog: $is_catalog, slug: $slug) {
+    title
+    slug
+    summary
+    video_review {
+      title
+      description
+      video {
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        title
+        caption
+        video {
+          link
+        }
+      }
+    }
+    preview_image {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

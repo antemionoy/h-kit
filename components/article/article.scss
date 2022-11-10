@@ -1,0 +1,53 @@
+@import 'variables';
+@import 'mixins';
+
+.article {
+  &__h1 {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 54px;
+    max-width: 648px;
+
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__items {
+    margin-top: 77px;
+    margin-bottom: 111px;
+    padding-top: 0;
+
+    @include mobile {
+      margin-top: 30px;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__h2.main-wrapper__h2 {
+    margin-top: 120px;
+
+    @include mobile {
+      margin-top: 40px !important;
+    }
+  }
+
+  &__p {
+    max-width: 800px;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__grid {
+    margin-top: 80px;
+
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+}

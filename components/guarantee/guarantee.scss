@@ -1,0 +1,23 @@
+.guarantee {
+  &__list {
+    margin-top: 68px;
+  }
+
+  &__description {
+    max-width: 679px;
+  }
+
+  &__form {
+    margin-top: 147px;
+  }
+
+  @media screen and (max-width: $mobile) {
+    &__list {
+      margin-top: 40px;
+    }
+
+    &__form {
+      margin-top: 40px;
+    }
+  }
+}

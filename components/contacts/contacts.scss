@@ -1,0 +1,66 @@
+@import 'variables';
+@import 'mixins';
+
+.contacts {
+  &__text {
+    max-width: 694px;
+    margin-bottom: 40px;
+  }
+
+  &__info {
+    margin-top: 60px;
+
+    &-col {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    margin-top: 87px;
+  }
+
+  &__form {
+    margin-top: 80px;
+  }
+}
+
+.info-item {
+  &__title {
+    + .info-item__info {
+      margin-top: 8px;
+    }
+  }
+
+  &__title {
+    color: $black-common;
+  }
+
+  &__info:first-letter {
+    text-transform: none;
+  }
+
+  &__info-phone {
+    color: $black_title;
+
+    &:hover {
+      color: $green_main;
+    }
+  }
+
+  &--reverse {
+    .info-item__info {
+      margin-top: 0;
+
+      + .info-item__title {
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+.contact-list {
+  dt:not(:first-of-type),
+  &__item + .contact-list__item {
+    margin-top: 40px;
+  }
+}

@@ -1,0 +1,39 @@
+@import 'variables'; @import 'mixins';
+
+.step-10 {
+  padding-top: 160px;
+  @media screen and (max-width: $tablet) {
+    padding-top: 120px;
+  }
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  &__caption {
+    padding-bottom: 16px;
+    color: $gray_caption_step;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 72px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+      display: block;
+    }
+  }
+  &__title {
+    max-width: 500px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 30px;
+    }
+  }
+  &__description {
+    max-width: 405px;
+  }
+  &__image {
+    display: block;
+    width: 100%;
+  }
+}

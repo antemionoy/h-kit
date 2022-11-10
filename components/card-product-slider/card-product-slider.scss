@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'mixins';
+
+.card-product-slider {
+  &.feauture {
+    padding-top: 0;
+  }
+
+  @include mobile {
+    .swiper-wrapper {
+      padding-bottom: 30px;
+    }
+  }
+
+  .swiper-pagination {
+    z-index: 1;
+    @include min-mobile {
+      display: none;
+    }
+  }
+}

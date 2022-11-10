@@ -1,0 +1,85 @@
+@import 'variables'; @import 'mixins';
+
+.card-case{
+  display: flex;
+  justify-content: space-between;
+  @media screen and (max-width: $tablet) {
+    display: block;
+  }
+  &__image {
+    width: 40%;
+    position: relative;
+    display: block;
+
+    img {
+      display: block;
+      width: 100%;
+      height: calc(100% - 45px);
+      object-fit: cover;
+      object-position: center center;
+      transition: filter 0.3s ease 0s;
+      &:hover {
+        filter: brightness(105%);
+      }
+    }
+    span {
+      display: block;
+      margin-top: 20px;
+      font-weight: 500;
+      font-size: 20px;
+      color: $black_title;
+    }
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+  &__image--absolute {
+    position: absolute;
+    width: 65%;
+    left: 0;
+    top: 50%;
+    transform: translate(-70%, -50%);
+    height: 300px;
+    span {
+      max-width: 220px;
+    }
+    @media screen and (max-width: $tablet) {
+      position: static;
+      transform: none;
+      margin-top: 40px;
+      height: auto;
+      width: auto;
+    }
+  }
+  &__content {
+    padding: 30px 0px;
+    max-width: 392px;
+    flex-shrink: 0;
+    margin-right: 70px;
+    @media screen and (max-width: $tablet) {
+      max-width: none;
+      padding: 0 0 60px;
+    }
+    @media screen and (max-width: $mobile) {
+      padding: 0 0 30px;
+    }
+  }
+  &__title {
+    margin-bottom: 34px;
+    @media screen and (max-width: $tablet) {
+      max-width: 380px;
+    }
+  }
+  &__description {
+    margin-bottom: 54px;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 32px;
+    }
+  }
+  &__button {
+    @media screen and (max-width: $tablet) {
+      margin-top: 40px;
+    }
+  }
+}

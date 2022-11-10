@@ -1,0 +1,8 @@
+query Deliveries {
+  deliveries {
+    id
+    name
+    price
+    description
+  }
+}

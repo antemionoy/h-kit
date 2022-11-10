@@ -1,0 +1,117 @@
+query Material($slug: String) {
+  material(slug: $slug) {
+    id
+    slug
+    title
+    type
+    summary
+    price
+    discount_price
+    description
+    category {
+      slug
+    }
+    colors {
+      id
+      color
+      image {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      images {
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+    }
+    tags {
+      id
+      name
+      slug
+    }
+    materials
+    features
+    configurations {
+      id
+      name
+      image {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+    kitchens {
+      id
+      title
+      slug
+      price
+      discount_price
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      preview_video
+    }
+    related {
+      id
+      type
+      title
+      slug
+      category {
+        slug
+      }
+      summary
+      count_color
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      preview_hover {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+    accessories {
+      id
+      type
+      title
+      slug
+      category {
+        slug
+      }
+      summary
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      preview_hover {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import 'variables'; @import 'mixins';
+
+.card-material {
+  display: flex;
+  align-items: center;
+  &--active &__image::after {
+    opacity: 1;
+  }
+  &__image {
+    width: 80px;
+    height: 80px;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-shrink: 0;
+    margin-right: 22px;
+    border-radius: 50%;
+    position: relative;
+    &::after {
+      content: '';
+      display: block;
+      width: 98px;
+      height: 98px;
+      border: 2px solid $green_main;
+      position: absolute;
+      left: -9px;
+      top: -9px;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
+      @media screen and (max-width: $mobile) {
+        display: none;
+      }
+    }
+  }
+  &__title {
+    margin-bottom: 8px;
+  }
+}

@@ -1,0 +1,114 @@
+@import 'variables';
+@import 'mixins';
+.catalog-main {
+  position: relative;
+  padding-top: 51px;
+  &__header {
+    // padding-bottom: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__item {
+    height: calc(100vh - 123px - 45px - 42px - 51px);
+    min-height: 500px;
+    @media screen and (max-width: $tablet) {
+      height: calc(100vh - 123px - 42px - 51px);
+    }
+    @media screen and (max-width: $mobile) {
+      min-height: 225px;
+      height: auto;
+    }
+  }
+  &__content {
+    max-width: 410px;
+    padding: 70px 0 45px 45px;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__caption {
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    margin-bottom: 37px;
+  }
+  &__description {
+    max-width: 654px;
+  }
+  &__image {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 75%;
+    img {
+      object-fit: cover;
+      object-position: center center;
+      width: 100%;
+      height: 100%;
+    }
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
+  }
+  &__vector {
+    background-position: right center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 65%;
+
+    @media screen and (max-width: $mobile) {
+      display: none;
+    }
+  }
+  &__swiper {
+    max-width: 60%;
+    margin: 0 auto;
+    @media screen and (max-width: $tablet) {
+      max-width: 85%;
+    }
+    @media screen and (max-width: $mobile) {
+      max-width: 100%;
+    }
+  }
+  &__thumbnail {
+    position: absolute;
+    left: 0;
+    @media screen and (max-width: $tablet) {
+      bottom: 0;
+      transform: translateY(50%);
+      z-index: 1;
+    }
+    @media screen and (max-width: $mobile) {
+      width: calc(264px + 16px);
+    }
+  }
+  &__thumbnail-wrapper {
+    width: auto;
+    height: auto;
+  }
+  .swiper-slide-active &__thumbnail-item {
+    background-color: $green_main;
+    .card-thumbnail__title {
+      color: $white;
+    }
+    .card-thumbnail__note {
+      color: rgba($white, 0.7);
+    }
+  }
+  &__thumbnail-item {
+    height: 100%;
+  }
+}

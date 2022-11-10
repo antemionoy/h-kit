@@ -1,0 +1,7 @@
+query Cities {
+  cities {
+    id
+    name
+    slug
+  }
+}

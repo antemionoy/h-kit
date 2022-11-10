@@ -1,0 +1,105 @@
+//color_variables
+$green_main: #b2cc79;
+$green_common: #e7f6c5;
+$green_arrow: #b3cc7a;
+$black: #000;
+$black_title: #221e20;
+$black_link: #2f3842;
+$black_text: #505050;
+$black_common: #8b8f93;
+$white_main: #f6f7f8;
+$white: #fff;
+$gray_controls: #969696;
+$gray_caption: #909090;
+$gray_header: #4d4d4d;
+$gray_header_hover: #7a7878;
+$gray_caption_step: rgba(#8b8f93, 0.5);
+$light_gray: #e6e6e6;
+$gray: #6a6a6a;
+$green_btn_hover: #c2da8e;
+$green_btn_active: #a6c268;
+$yellow_caption: #f7c75c;
+$gray_caprion: #949494;
+$red_error: #ec4641;
+
+//breakpoint_variables
+$desktopLarge: 2560px;
+$desktop: 1920px;
+$tablet: 1279px;
+$mobile: 768px;
+
+$container: 1440px;
+
+//gaps
+$padding-desktop: 112px;
+$padding-tablet: 90px;
+$padding-mobile: 16px;
+
+$margin-desktop: calc(50vw - #{($container - $padding-desktop * 2) / 2});
+$margin-desktop--neg: calc(#{($container - $padding-desktop * 2) / 2} - 50vw);
+
+//mixins
+@mixin container {
+  @media screen and (max-width: $container) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin min-container {
+  @media screen and (min-width: $container + 1px) {
+    @content;
+  }
+}
+
+@mixin min-tablet {
+  @media screen and (min-width: $tablet + 1px) {
+    @content;
+  }
+}
+
+@mixin min-mobile {
+  @media screen and (min-width: $mobile + 1px) {
+    @content;
+  }
+}
+
+@mixin full-width {
+  margin-left: $margin-desktop--neg;
+  margin-right: $margin-desktop--neg;
+
+  @include container {
+    margin-left: -$padding-desktop;
+    margin-right: -$padding-desktop;
+  }
+  @media screen and (max-width: $tablet) {
+    margin-left: -$padding-tablet;
+    margin-right: -$padding-tablet;
+  }
+  @media screen and (max-width: $mobile) {
+    margin-left: -$padding-mobile;
+    margin-right: -$padding-mobile;
+  }
+}
+
+@mixin hidden-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

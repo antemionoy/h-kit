@@ -1,0 +1,236 @@
+query Cases(
+  $is_home: Boolean
+  $is_catalog: Boolean
+  $slug: String
+  $limit: Int
+  $offset: Int = 0
+) {
+  cases(
+    is_home: $is_home
+    is_catalog: $is_catalog
+    slug: $slug
+    limit: $limit
+    offset: $offset
+  ) {
+    pagination {
+      limit
+      offset
+      total
+      is_last
+    }
+    data {
+      title
+      slug
+      summary
+      preview_image {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      detail_image {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      tags {
+        id
+        name
+        slug
+      }
+      about {
+        designer
+        style
+        type
+        family_size
+        budget
+        size
+        timing
+        location
+      }
+      hero {
+        text
+        left_image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        right_image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      video_review {
+        title
+        description
+        video {
+          image {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+          title
+          caption
+          video {
+            link
+          }
+        }
+      }
+      processes {
+        title
+        description
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      overview {
+        title
+        description
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        items {
+          id
+          image {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+          button_text
+          top
+          left
+        }
+      }
+      client {
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        name
+        caption
+      }
+      blocks {
+        quote
+        title
+        description
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        related_title
+        type
+        materials {
+          id
+          type
+          title
+          slug
+          category {
+            slug
+          }
+          summary
+          preview {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+          preview_hover {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+        }
+        accessories {
+          id
+          type
+          title
+          slug
+          category {
+            slug
+          }
+          summary
+          preview {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+          preview_hover {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+        }
+        technics {
+          id
+          type
+          title
+          slug
+          category {
+            slug
+          }
+          summary
+          preview {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+          preview_hover {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+        }
+        compositions {
+          title
+          description
+          top
+          left
+          image {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+        }
+      }
+    }
+  }
+}

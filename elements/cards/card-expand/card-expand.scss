@@ -1,0 +1,30 @@
+@import 'variables'; @import 'mixins';
+.card-expand {
+  background-color: $white;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 382px;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  &__title {
+    font-weight: 500;
+    font-size: 16px;
+    color: $black;
+  }
+  &__description {
+    padding-right: 20px;
+    height: 0;
+    overflow: hidden;
+    box-sizing: content-box;
+    transition: padding-top 0.3s ease 0s, height 0.3s ease 0s, padding-bottom 0.3s ease 0s;
+  }
+  &__toggler {
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    color: #B1B1B1;
+  }
+}

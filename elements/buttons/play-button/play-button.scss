@@ -1,0 +1,31 @@
+@import 'variables'; @import 'mixins';
+
+.button-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: $white;
+  background-color: $green_main;
+  transition: all 0.3s ease 0s;
+  transform: translateZ(0);
+  &:hover {
+    background-color: $green_btn_hover;
+    transform: translateZ(0) scale(1.1);
+  }
+  &:active {
+    background-color: $green_btn_active;
+  }
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  svg {
+    margin-left: 3px;
+  }
+}

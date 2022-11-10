@@ -1,0 +1,176 @@
+@import 'variables';
+
+.loan {
+  margin-top: 70px;
+  margin-bottom: 150px;
+
+  @include tablet {
+    margin-top: 60px;
+    margin-bottom: 120px;
+  }
+  @include mobile {
+    margin-top: 50px;
+    margin-bottom: 70px;
+  }
+  &__subtitle {
+    width: 100%;
+    max-width: 679px;
+    margin-top: 40px;
+    margin-left: 5px;
+  }
+
+  &-card {
+    &__limit {
+      padding-right: 86px;
+    }
+    &__description {
+      padding-right: 20px;
+      height: 100%;
+
+      @include mobile {
+        padding: 0;
+      }
+    }
+  }
+
+  .card-credit {
+    @include tablet {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__content {
+    margin-top: 80px;
+    @include tablet {
+      margin-top: 60px;
+    }
+    &-descr {
+      padding-right: 13%;
+      @include mobile {
+        padding-right: 0;
+      }
+
+      &-item {
+        min-height: 27px;
+      }
+    }
+
+    &-reasons {
+      margin-top: 24px;
+      margin-bottom: 32px;
+    }
+
+    &-reasons-item {
+      position: relative;
+      padding-left: 30px;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 160%;
+
+      &:not(:first-child) {
+        margin-top: 14px;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: calc(50% - 3px);
+        width: 6px;
+        height: 6px;
+        background: $green_btn_active;
+        border-radius: 50%;
+      }
+    }
+
+    &-icons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      max-width: 720px;
+
+      @include tablet {
+        justify-content: flex-start;
+      }
+    }
+    &-item {
+      display: flex;
+      @include tablet {
+        flex-direction: column;
+      }
+    }
+    &-title {
+      width: 30%;
+      @include tablet {
+        margin-bottom: 30px;
+        width: 100%;
+      }
+      span {
+        color: $green_main;
+      }
+    }
+    &-text {
+      flex-shrink: 10;
+      padding-left: 6%;
+      width: 100%;
+
+      @include tablet {
+        padding-left: 0;
+      }
+    }
+  }
+
+  &__conditions {
+    margin-top: 80px;
+    @media screen and (max-width: $tablet) {
+      margin-top: 60px;
+    }
+
+    &-data {
+      margin-top: 12px;
+      margin-bottom: 40px;
+      @media screen and (max-width: $tablet) {
+        margin-bottom: 0;
+      }
+
+      .requisites__item-title {
+        width: 45%;
+        @include mobile {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__banks {
+    margin-top: 120px;
+    margin-bottom: 140px;
+    @media screen and (max-width: $tablet) {
+      margin-top: 80px;
+      margin-bottom: 110px;
+    }
+
+    &-data {
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid $white;
+      overflow: hidden;
+      margin-top: 65px;
+      width: 99.9%;
+    }
+  }
+  &__bank {
+    width: calc(100% / 3);
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 0px 1px rgba(139, 143, 147, 0.3);
+    span {
+      max-width: 85%;
+    }
+    @include mobile {
+      width: 50%;
+    }
+  }
+}

@@ -1,0 +1,129 @@
+@import 'variables';
+@import 'mixins';
+
+.filter-grid {
+  padding-top: 80px;
+
+  @include mobile {
+    padding-top: 40px;
+  }
+
+  &__layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__card {
+    width: calc(50% - 16px);
+    max-width: none;
+    height: auto;
+    margin-bottom: 97px;
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      margin-bottom: 24px;
+    }
+  }
+  &__compilation {
+    @include full-width;
+    flex-grow: 1;
+    flex-shrink: 0;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    box-sizing: content-box;
+    margin-bottom: 97px;
+
+    &.card-new-offer {
+      margin-top: 48px;
+      margin-bottom: 118px;
+      padding-bottom: 108px;
+      @include mobile {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        padding-bottom: 50px;
+      }
+    }
+
+    &.container {
+      padding-left: $margin-desktop;
+      padding-right: $margin-desktop;
+
+      @include container {
+        padding-left: $padding-desktop;
+        padding-right: $padding-desktop;
+      }
+
+      @media screen and (max-width: $tablet) {
+        padding-left: $padding-tablet;
+        padding-right: $padding-tablet;
+      }
+
+      @media screen and (max-width: $mobile) {
+        padding-left: $padding-mobile;
+        padding-right: $padding-mobile;
+      }
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 97px;
+    }
+    @media screen and (max-width: $mobile) {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+
+  &__more {
+    margin-top: 60px;
+
+    @include mobile {
+      margin-top: 20px;
+    }
+  }
+}
+
+.more {
+  display: flex;
+  justify-content: center;
+  &__wrapper {
+    text-align: center;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__counter {
+    font-weight: 300;
+    font-size: 16px;
+    color: $black_common;
+  }
+  &__progress {
+    width: 210px;
+    height: 2px;
+    background-color: $black_common;
+    position: relative;
+    margin: 15px 0;
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+  &__progress-line {
+    background-color: $black_title;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+  }
+  &__load {
+    cursor: pointer;
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: $green_main;
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,115 @@
+@import 'variables'; @import 'mixins';
+
+.filter-range {
+  position: relative;
+  &__button {
+    width: 100%;
+    background-color: transparent;
+    height: 56px;
+    padding: 0 20px;
+    border: 1px solid rgba(139, 143, 147, 0.1);
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    svg {
+      width: 13px;
+      height: 8px;
+      flex-shrink: 0;
+      margin-left: 7px;
+      color: currentColor;
+      transform: rotate(0deg);
+      transition: transform 0.3s ease 0s;
+    }
+    &--open svg {
+      transform: rotate(180deg);
+    }
+  }
+  &__button-text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 400;
+    color: $black_title;
+  }
+  &__dropdown {
+    @include hidden-scrollbar;
+    position: absolute;
+    box-shadow: 0px 0px 10px rgba(black, 0.2);
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transform: translate(0%, 1%);
+    background-color: $white;
+    border-radius: 12px;
+    padding: 20px 20px 0 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    pointer-events: none;
+    z-index: 6;
+    overflow: auto;
+    max-height: 400px;
+    &--active {
+      opacity: 1;
+      pointer-events: initial;
+    }
+  }
+  &__reset {
+    width: calc(100% + 40px);
+    height: 56px;
+    background-color: $white_main;
+    border: none;
+    margin-left: -20px;
+    color: $black_common;
+    font-weight: 300;
+    font-size: 16px;
+    cursor: pointer;
+    &--disabled {
+      pointer-events: none;
+      outline: none;
+      cursor: initial;
+    }
+  }
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  &__input {
+    width: calc(50% - 6px);
+    input {
+      padding-right: 10px;
+    }
+  }
+  &__control {
+    padding-bottom: 34px;
+  }
+  &__result {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 300;
+    font-size: 16px;
+    color: $black_common;
+  }
+  .range-block {
+    padding-bottom: 10px;
+    &__thumb {
+      width: 16px;
+      height: 16px;
+      background-color: $green_main;
+      border-radius: 50%;
+      outline: none;
+      top: 0%;
+      transform: translate(0%, -50%);
+    }
+    &__track {
+      background-color: $green_main;
+      height: 1px;
+      cursor: pointer;
+      &-0, &-2 {
+        background-color: #C4C4C4;
+      }
+    }
+  }
+}

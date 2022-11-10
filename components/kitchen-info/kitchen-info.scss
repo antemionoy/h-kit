@@ -1,0 +1,92 @@
+@import 'variables';
+@import 'mixins';
+
+.kitchen-info {
+  padding-top: 100px;
+  @media screen and (max-width: $mobile) {
+    padding-top: 50px;
+  }
+  &__title {
+    padding-bottom: 55px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 20px;
+    }
+  }
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    // justify-content: space-between;
+    margin-bottom: 70px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 40px;
+    }
+  }
+  &__subtitle {
+    width: 43%;
+    @media screen and (max-width: $tablet) {
+      width: auto;
+      padding-bottom: 30px;
+    }
+  }
+  &__designer {
+    max-width: 570px;
+  }
+  &__materials {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 570px;
+    margin-bottom: -8px;
+    @media screen and (max-width: $tablet) {
+      max-width: none;
+      justify-content: flex-start;
+    }
+  }
+  &__material {
+    width: calc(50% - 5px);
+    margin-bottom: 8px;
+    @media screen and (max-width: $tablet) {
+      width: calc(33% - 15px);
+      min-width: 210px;
+      margin: 0 5px 8px;
+    }
+    @media screen and (max-width: $mobile) {
+      width: auto;
+      min-width: 0;
+    }
+  }
+  &__pluses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 570px;
+    margin-bottom: -6px;
+    @media screen and (max-width: $tablet) {
+      max-width: none;
+    }
+    @media screen and (max-width: $mobile) {
+      display: block;
+    }
+  }
+  &__plus {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    width: calc(50% - 5px);
+    svg {
+      flex-shrink: 0;
+      margin-right: 10px;
+      margin-top: 5px;
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}

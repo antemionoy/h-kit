@@ -1,0 +1,13 @@
+query Processes {
+  processes {
+    id
+    title
+    description
+    image {
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+query HomeMaterials(
+  $width: Int = 1400
+  $height: Int = 930
+  $miniatureWidth: Int = 160
+  $miniatureHeight: Int = 160
+) {
+  home_materials {
+    id
+    title
+    description
+    image {
+      id
+      path(width: $width, height: $height) {
+        normal
+        retina
+      }
+    }
+    miniature {
+      id
+      path(width: $miniatureWidth, height: $miniatureHeight) {
+        normal
+        retina
+      }
+    }
+  }
+}

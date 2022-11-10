@@ -1,0 +1,84 @@
+@import 'variables';
+@import 'mixins';
+
+.card-horizontal {
+  max-width: 590px;
+  display: block;
+  &:hover &__image img {
+    transform: scale(1.05) translateZ(0);
+  }
+  &__price {
+    color: $black_text;
+    font-weight: 400;
+
+    @include mobile {
+      font-size: 13px;
+      line-height: 100%;
+    }
+
+    &:first-letter {
+      text-transform: lowercase;
+    }
+  }
+  &__image {
+    overflow: hidden;
+    position: relative;
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 65%;
+    }
+    img,
+    video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      transition: transform 0.3s ease 0s;
+      transform: translateZ(0);
+    }
+  }
+  & &__image-video {
+    opacity: 0;
+    transition: transform 0.3s ease 0s, opacity 0.3s ease 0s;
+    &--show {
+      opacity: 1;
+    }
+  }
+  &__content {
+    margin-top: 20px;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  &--loading &__image {
+    &::before {
+      background-image: none;
+      background-color: $white_main;
+    }
+  }
+  &--loading &__title {
+    min-width: 159px;
+    min-height: 22px;
+    background-color: $white_main;
+  }
+  &--loading &__price {
+    max-width: 93px;
+    min-height: 22px;
+    background-color: $white_main;
+  }
+  &--loading &__favorite {
+    background-color: $white_main;
+    cursor: initial;
+    svg {
+      z-index: -1;
+    }
+  }
+}

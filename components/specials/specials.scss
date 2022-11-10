@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'mixins';
+
+.specials {
+  &__h1 {
+    margin-bottom: 40px;
+  }
+
+  &__text {
+    margin-bottom: 58px;
+    max-width: 571px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__list {
+    padding-top: 0;
+  }
+
+  &__card {
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__order.order {
+    margin-top: 90px;
+
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+}

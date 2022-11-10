@@ -1,0 +1,6 @@
+query Requisites {
+  props {
+    key
+    value
+  }
+}

@@ -1,0 +1,77 @@
+@import 'variables';
+@import 'mixins';
+.materials {
+  padding-top: 160px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__wrapper {
+    padding-bottom: 55px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+      display: block;
+    }
+  }
+  &__images {
+    flex: 1;
+    position: relative;
+    padding-top: 38%;
+  }
+  &__list {
+    flex-shrink: 0;
+    margin-left: 63px;
+    max-width: 467px;
+    @media screen and (max-width: $tablet) {
+      margin-left: 0;
+    }
+  }
+  &__title {
+    padding-bottom: 65px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 45px;
+    }
+  }
+  &__image {
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease 0s;
+    &--active {
+      opacity: 1;
+    }
+  }
+  &__item {
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.materials-facades,
+.materials-coutertops {
+  & .product-main__description {
+    min-height: 280px;
+    @include tablet {
+      min-height: auto;
+    }
+  }
+  & + .order--wide + .container {
+    & > .proposal:first-child {
+      padding-top: 0;
+    }
+    & > .product-video:first-child {
+      padding-top: 0;
+    }
+  }
+}

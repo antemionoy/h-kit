@@ -1,0 +1,31 @@
+@import 'variables'; @import 'mixins';
+
+.card-nav {
+  width: 264px;
+  &__image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 70%;
+    transition: opacity 0.3s ease 0s;
+  }
+  &__content {
+    margin-top: 40px;
+  }
+  &__title {
+    color: $black_title;
+    margin-bottom: 30px;
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: $green_main;
+    }
+  }
+  &__link {
+    margin-bottom: 15px;
+    color: $black_title;
+    transition: color 0.3s ease 0s;
+    &:hover {
+      color: $green_main;
+    }
+  }
+}

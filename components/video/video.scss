@@ -1,0 +1,23 @@
+@import 'variables'; @import 'mixins';
+
+.feedback {
+  padding-top: 161px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__title {
+    padding-bottom: 64px;
+    max-width: 840px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 37px;
+    }
+  }
+  &__video {
+    @include full-width;
+    margin-bottom: 160px;
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 100px;
+    }
+  }
+}

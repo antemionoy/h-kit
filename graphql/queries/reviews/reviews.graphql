@@ -1,0 +1,51 @@
+query Reviews($limit: Int, $offset: Int) {
+  reviews(limit: $limit, offset: $offset) {
+    pagination {
+      limit
+      offset
+      total
+      is_last
+    }
+    data {
+      image {
+        id
+        name
+        path {
+          normal
+          retina
+        }
+      }
+
+      case {
+        slug
+      }
+      kitchen {
+        id
+        slug
+        preview {
+          name
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      client {
+        photo {
+          name
+          id
+          path {
+            retina
+            normal
+          }
+        }
+        name
+        label
+      }
+      is_highlight
+      review
+      label
+    }
+  }
+}

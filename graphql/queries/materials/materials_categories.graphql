@@ -1,0 +1,13 @@
+query MaterialsCategories {
+  material_categories {
+    id
+    name
+    slug
+    description
+    tags {
+      id
+      name
+      slug
+    }
+  }
+}

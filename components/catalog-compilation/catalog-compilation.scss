@@ -1,0 +1,62 @@
+@import 'variables';
+@import 'mixins';
+.catalog-compilation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white_main;
+  @media screen and (max-width: $mobile) {
+    display: block;
+  }
+  &--reverse {
+    flex-direction: row-reverse;
+  }
+  &__list {
+    width: calc(50% - 16px);
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $mobile) {
+      width: auto;
+      overflow-y: hidden;
+      overflow-x: scroll;
+      @include full-width;
+      box-sizing: content-box;
+      padding: 0 $padding-mobile;
+    }
+  }
+  &__card {
+    width: calc(50% - 16px);
+    @media screen and (max-width: $tablet) {
+      width: 75%;
+      min-width: 230px;
+      max-width: none;
+      margin-right: 20px;
+    }
+  }
+  &__content {
+    width: calc(50% - 16px);
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      padding-bottom: 32px;
+    }
+  }
+  &__content-wrapper {
+    max-width: 350px;
+    margin: auto;
+    @media screen and (max-width: $mobile) {
+      margin-left: 0;
+      margin-right: auto;
+    }
+  }
+  &__caption {
+    padding-bottom: 10px;
+  }
+  &__title {
+    padding-bottom: 38px;
+  }
+  &__description {
+    padding-bottom: 38px;
+  }
+  &__button {
+  }
+}

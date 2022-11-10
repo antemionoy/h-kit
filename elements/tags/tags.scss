@@ -1,0 +1,37 @@
+@import 'variables'; @import 'mixins';
+
+.tags-list {
+  display: flex;
+
+  &__item {
+    margin-bottom: 8px;
+    flex-shrink: 0;
+    &:not(:last-of-type) {
+      margin-right: 8px;
+    }
+  }
+
+  @include min-mobile {
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    overflow-x: auto;
+    margin-left: -$padding-mobile;
+    margin-right: -$padding-mobile;
+    padding-left: $padding-mobile;
+
+    &__item {
+      margin-bottom: 0;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      width: $padding-mobile;
+      height: 1px;
+      flex-grow: 1;
+      flex-shrink: 0;
+    }
+  }
+}

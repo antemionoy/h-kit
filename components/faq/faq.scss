@@ -1,0 +1,23 @@
+@import 'variables';
+@import 'mixins';
+
+.faq {
+  &__h1 {
+    margin-bottom: 40px;
+  }
+
+  &__accordion {
+    margin-top: 40px;
+  }
+
+  &__text {
+    max-width: 571px;
+  }
+
+  &__form {
+    margin-top: 133px;
+    @include mobile {
+      margin-top: 40px;
+    }
+  }
+}

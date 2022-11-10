@@ -1,0 +1,10 @@
+.header-item-materials {
+  &__wrapper {
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+  }
+  & &__card {
+    width: calc(25% - 25px);
+  }
+}

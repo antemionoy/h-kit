@@ -1,0 +1,32 @@
+@import 'variables'; @import 'mixins';
+
+.step-1 {
+  padding-top: 64px;
+
+  &__caption {
+    padding-bottom: 16px;
+    color: $gray_caption_step;
+  }
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media screen and (max-width: $mobile) {
+      display: block;
+    }
+  }
+  &__title {
+    max-width: 500px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 30px;
+    }
+  }
+  &__description {
+    max-width: 405px;
+    margin-left: 30px;
+    @media screen and (max-width: $mobile) {
+      margin-left: 0;
+      max-width: none;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@import 'variables'; @import 'mixins';
+
+.card-new-offer {
+  padding: 179px 0 107px;
+
+  @include tablet {
+
+    &.grid {
+      flex-wrap: nowrap;
+    }
+
+    &__img.grid__col {
+      margin-top: 0;
+      margin-left: 50px;
+    }
+  }
+
+  @include mobile {
+    &.grid {
+      flex-wrap: wrap;
+    }
+
+    &__img.grid__col {
+      margin-top: 32px;
+      margin-left: 0;
+    }
+    padding: 50px 0 40px;
+  }
+
+  &__info {
+    padding: 70px 0 70px 104px;
+
+    @include tablet {
+      padding-left: 0;
+    }
+    @include mobile {
+      padding: 0;
+    }
+
+    &.grid__col {
+      box-sizing: content-box;
+    }
+  }
+
+  &__caption {
+    margin-bottom: 17px;
+    color: $gray_controls;
+  }
+
+  &__title {
+    margin-bottom: 34px;
+  }
+
+  &__description {
+    margin-bottom: 54px;
+  }
+
+  &__img {
+    height: 432px;
+
+    img {
+      height: 100%;
+    }
+
+    @include mobile {
+      height: auto;
+
+      img {
+        height: auto;
+      }
+    }
+
+  }
+}

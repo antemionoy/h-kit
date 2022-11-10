@@ -1,0 +1,72 @@
+@import 'variables'; @import 'mixins';
+
+.button-pair {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  border: none;
+  min-height: 32px;
+  background-color: transparent;
+  transition: all 0.3s ease 0s;
+  white-space: nowrap;
+  cursor: pointer;
+  outline: none;
+  @media screen and (max-width: $mobile) {
+    white-space: normal;
+    text-align: left;
+  }
+
+  &:not(.h1) {
+    justify-content: center;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    color: $black_link;
+
+    svg {
+      width: 8px;
+      height: 12px;
+    }
+  }
+
+  &:hover .button-pair__icon {
+    transform: scale(1.1);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    margin-left: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: $green_common;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $green_arrow;
+    transition: transform 0.3s ease 0s;
+  }
+  &--disabled {
+    pointer-events: none;
+    opacity: 0.4;
+  }
+
+  &--back:not(.h1) {
+    flex-direction: row-reverse;
+    font-size: 20px;
+    line-height: 120%;
+    color: $gray_caption_step;
+    margin-bottom: 11px;
+
+    .button-pair__icon {
+      margin-left: 0;
+      margin-right: 10px;
+      background-color: $white_main;
+      color: $gray_caption_step;
+
+      svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

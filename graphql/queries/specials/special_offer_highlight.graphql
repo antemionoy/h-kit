@@ -1,0 +1,17 @@
+query SpecialOffers($is_highlight: Boolean = true) {
+  special_offers(is_highlight: $is_highlight) {
+    data {
+      id
+      title
+      slug
+      description
+      label
+      image {
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

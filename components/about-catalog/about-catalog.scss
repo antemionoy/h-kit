@@ -1,0 +1,56 @@
+@import 'variables';
+@import 'mixins';
+.about-catalog {
+  padding-top: 225px;
+  padding-bottom: 180px;
+  @media screen and (max-width: $tablet) {
+    padding-top: 200px;
+  }
+  @media screen and (max-width: $mobile) {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    display: block;
+  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__content {
+    width: calc(50% - 16px);
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+      padding-bottom: 32px;
+    }
+  }
+  &__list {
+    width: calc(50% - 16px);
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $mobile) {
+      width: calc(100% + 16px);
+      overflow-x: scroll;
+    }
+  }
+  &__item {
+    width: calc(50% - 16px);
+    max-width: none;
+    @media screen and (max-width: $mobile) {
+      width: 80%;
+      margin-right: 16px;
+      min-width: 184px;
+      flex-shrink: 0;
+    }
+  }
+  &__title {
+    max-width: 490px;
+    padding-bottom: 32px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.about-preview {
+  & .preview__author {
+    left: 12%;
+  }
+}

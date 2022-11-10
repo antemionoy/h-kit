@@ -1,0 +1,58 @@
+query Kitchens(
+  $slug: String
+  $ids: [Int]
+  $limit: Int
+  $offset: Int = 0
+  $filter: FilterKitchenInput
+) {
+  kitchens(
+    slug: $slug
+    ids: $ids
+    limit: $limit
+    offset: $offset
+    filter: $filter
+  ) {
+    pagination {
+      is_last
+      total
+    }
+    seo {
+      title
+      description
+      h1
+    }
+    data {
+      id
+      title
+      slug
+      discount_price
+      price
+
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      tags {
+        id
+        name
+        slug
+      }
+      sliders {
+        image {
+          id
+          name
+          path {
+            normal
+            retina
+          }
+        }
+        video {
+          link
+        }
+      }
+    }
+  }
+}

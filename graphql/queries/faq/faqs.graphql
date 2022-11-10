@@ -1,0 +1,13 @@
+query FAQs {
+  faqs {
+    id
+    question
+    answer
+    image {
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

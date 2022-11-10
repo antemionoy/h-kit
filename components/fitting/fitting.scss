@@ -1,0 +1,161 @@
+@import 'variables';
+@import 'mixins';
+
+.fitting {
+  margin-top: 40px;
+  margin-bottom: 100px;
+
+  &__back {
+    // @include mobile {
+    //   display: none;
+    // }
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+
+    &-description {
+      margin-top: 50px;
+    }
+
+    &-title-mob {
+      padding-right: 70px;
+      @include mobile {
+        margin-bottom: 40px;
+      }
+    }
+
+    &-like {
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include mobile {
+        top: 30px;
+      }
+    }
+
+    &-control {
+      position: absolute;
+      top: calc(50% - 53px);
+      left: 0;
+      &-next {
+        left: calc(100% - 60px);
+      }
+    }
+
+    &-specifications {
+      margin-top: 60px;
+      svg {
+        margin-right: 16px;
+      }
+      @include tablet {
+        margin-top: 40px;
+      }
+      @include mobile {
+        margin-top: 20px;
+      }
+    }
+
+    &-specification {
+      &:not(:first-child) {
+        margin-top: 9px;
+      }
+    }
+
+    &-materials {
+      margin-top: 60px;
+      margin-bottom: 20px;
+      @include tablet {
+        margin-top: 40px;
+      }
+      @include mobile {
+        margin-top: 20px;
+      }
+      &-title {
+        margin-bottom: 26px;
+      }
+    }
+    &-slider {
+      width: 60%;
+      padding: 0 120px;
+      position: relative;
+
+      .swiper-container {
+        padding-bottom: 46px;
+      }
+
+      @include tablet {
+        padding: 0 70px;
+      }
+
+      @include mobile {
+        width: 100%;
+        padding: 0 12px;
+      }
+      &-item {
+        width: 100%;
+        height: 100%;
+        min-height: 480px;
+        max-height: 550px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          max-width: 100%;
+          max-height: 100%;
+        }
+
+        @include tablet {
+          min-height: 320px;
+        }
+        @include mobile {
+          min-height: auto;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    margin-top: 85px;
+    .swiper-wrapper {
+      max-height: 480px;
+      max-width: 1024px;
+    }
+    .wide-slider {
+      &__content {
+        padding-bottom: 35px;
+      }
+
+      &__note {
+        margin-top: 88px;
+        @include mobile {
+          margin-top: 50px;
+        }
+      }
+      &__title {
+        max-width: 540px;
+        font-size: 40px;
+
+        @include mobile {
+          font-size: 26px;
+        }
+      }
+    }
+  }
+  .product {
+    &-video {
+      padding-top: 93px;
+    }
+
+    &-proposal {
+      &__title {
+        font-size: 28px;
+      }
+    }
+  }
+}

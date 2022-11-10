@@ -1,0 +1,24 @@
+query HomeSliders($width: Int, $height: Int) {
+  home_sliders {
+    id
+    title
+    caption
+    description
+    button_text
+    link
+    image {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+    preview_image {
+      id
+      path(width: $width, height: $height) {
+        normal
+        retina
+      }
+    }
+  }
+}

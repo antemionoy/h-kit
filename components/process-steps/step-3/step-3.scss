@@ -1,0 +1,158 @@
+.step-3 {
+  padding-top: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+    display: block;
+  }
+  &__content {
+    max-width: 500px;
+    margin-right: 50px;
+    @media screen and (max-width: $mobile) {
+      max-width: 100%;
+      margin-right: 0;
+      padding-bottom: 35px;
+    }
+  }
+  &__caption {
+    padding-bottom: 16px;
+    color: $gray_caption_step;
+  }
+  &__title {
+    padding-bottom: 32px;
+  }
+  &__slider {
+    width: 60%;
+    @include tablet {
+      width: 50%;
+    }
+    @media screen and (max-width: $mobile) {
+      width: 100%;
+    }
+  }
+  &__swiper {
+    width: 100%;
+    padding: 0px 155px 0px;
+    margin-top: 50px;
+    position: relative;
+
+    @include tablet {
+      padding: 0px 50px 0px;
+    }
+    @media screen and (max-width: $mobile) {
+      max-width: none;
+      margin: 35px -16px 0 0;
+      padding: 0;
+      width: auto;
+      overflow-x: scroll;
+      display: flex;
+      align-items: center;
+      padding-bottom: 10px;
+    }
+  }
+  &__image {
+    position: relative;
+    img {
+      max-width: 100%;
+    }
+  }
+  &__image-selected {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    &--active {
+      opacity: 1;
+    }
+  }
+  &__slider-item {
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    max-width: 68px;
+    span {
+      position: absolute;
+      display: block;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      left: -5px;
+      top: -5px;
+      object-fit: cover;
+      max-height: 80px;
+      overflow: hidden;
+      border-radius: inherit;
+      margin: 10px;
+    }
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $green_main;
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+    &--active::after {
+      opacity: 1;
+    }
+    @media screen and (max-width: $mobile) {
+      width: 60px;
+      min-width: 60px;
+    }
+  }
+  &__slider-control {
+    position: absolute;
+    left: calc(0px + 80px);
+    bottom: 0;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $green_main;
+    cursor: pointer;
+    svg {
+      transition: transform 0.3s ease 0s;
+    }
+    &:hover svg {
+      transform: scale(1.2);
+    }
+    @include tablet {
+      left: 0;
+      width: 50px;
+    }
+
+    &--right {
+      left: auto;
+      right: calc(0px + 80px);
+      svg {
+        transform: scale(-1, 1);
+      }
+      &:hover svg {
+        transform: scale(-1.2, 1.2);
+      }
+      @media screen and (max-width: $tablet) {
+        right: 0;
+      }
+    }
+  }
+}

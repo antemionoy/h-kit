@@ -1,0 +1,197 @@
+query Kitchens(
+  $slug: String
+  $ids: [Int]
+  $limit: Int
+  $offset: Int
+  $filter: FilterKitchenInput
+  $materialWidth: Int = 980
+  $materialHeight: Int = 1000
+) {
+  kitchens(
+    slug: $slug
+    ids: $ids
+    limit: $limit
+    offset: $offset
+    filter: $filter
+  ) {
+    data {
+      id
+      title
+      slug
+      description
+      discount_price
+      price
+      price_pm
+      area
+      features
+      series {
+        name
+        slug
+      }
+      preview {
+        id
+        name
+        path {
+          normal
+          retina
+        }
+      }
+      designer {
+        name
+        description
+        image {
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      materials {
+        color
+        material {
+          id
+          title
+          slug
+          category {
+            slug
+          }
+        }
+        image {
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      case {
+        title
+        slug
+        summary
+        video_review {
+          video {
+            image {
+              path {
+                normal
+                retina
+              }
+            }
+            video {
+              link
+            }
+            title
+            caption
+          }
+        }
+        client {
+          name
+          caption
+          image {
+            path {
+              normal
+              retina
+            }
+          }
+        }
+        kitchen_detail {
+          quote
+        }
+      }
+      tags {
+        id
+        name
+        slug
+      }
+      sliders {
+        video {
+          id
+          name
+          link
+        }
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      composition {
+        list {
+          id
+          title
+          description
+          top
+          left
+          image {
+            id
+            path {
+              normal
+              retina
+            }
+          }
+        }
+        image {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      specifications {
+        id
+        title
+        description
+        image {
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      related {
+        id
+        title
+        slug
+        price
+        discount_price
+        preview {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        preview_video
+      }
+      material_slider {
+        id
+        title
+        slug
+        description
+        button_text
+        button_link
+        categories {
+          id
+          name
+          slug
+          items {
+            id
+            image {
+              path(width: $materialWidth, height: $materialHeight) {
+                normal
+                retina
+              }
+            }
+            miniature {
+              path {
+                retina
+                normal
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

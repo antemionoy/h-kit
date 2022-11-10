@@ -1,0 +1,139 @@
+@import 'variables';
+@import 'mixins';
+
+.career__vacancies {
+  margin-top: 115px;
+  .filter-tag__description {
+    font-weight: 400;
+  }
+
+  .list-marker {
+    width: 6px;
+    height: 6px;
+    background: $green_btn_active;
+    border-radius: 50%;
+    margin-right: 24px;
+    transform: translate(4px, 10px);
+    flex-shrink: 0;
+  }
+
+  @include tablet {
+    margin-top: 80px;
+  }
+  @include mobile {
+    margin-top: 60px;
+  }
+
+  &-tags {
+    margin-top: 35px;
+  }
+  &-list {
+    margin-top: 52px;
+  }
+
+  .vacancy {
+    width: 100%;
+
+    &-description {
+      margin-top: 20px;
+    }
+    &-content {
+      transition: height 0.3s ease 0s;
+      height: 0;
+      overflow: hidden;
+    }
+
+    &-title-wrapper {
+      padding: 28px 0;
+      cursor: pointer;
+      border-top: 1px solid #dedfe0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      @include tablet {
+        flex-direction: column;
+      }
+    }
+
+    &-grid {
+      width: 48%;
+      @include tablet {
+        width: 100%;
+      }
+    }
+
+    &-responsibilities-title {
+      color: $black-common;
+      margin-top: 75px;
+
+      @include tablet {
+        margin-top: 50px;
+      }
+      @include mobile {
+        margin-top: 30px;
+      }
+    }
+    &-responsibility {
+      display: flex;
+      &:not(:first-child) {
+        margin-top: 14px;
+      }
+    }
+    &-responsibilities {
+      margin-top: 20px;
+    }
+
+    &-button {
+      margin-top: 40px;
+      width: fit-content;
+      @include tablet {
+        order: 2;
+      }
+    }
+
+    &-submit {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .work {
+    &-conditions {
+      // @include tablet {
+      //   order: 0;
+      // }
+    }
+    &-items {
+      display: flex;
+      @include tablet {
+        order: 1;
+        flex-wrap: wrap;
+      }
+    }
+    &-item {
+      display: flex;
+      flex-direction: column;
+
+      &:not(:last-child) {
+        margin-right: 56px;
+        @include mobile {
+          margin-right: 20px;
+        }
+      }
+
+      @include tablet {
+        margin-top: 40px;
+      }
+      .h5 {
+        margin-top: 20px;
+        margin-bottom: 12px;
+      }
+    }
+  }
+}

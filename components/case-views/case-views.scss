@@ -1,0 +1,93 @@
+@import 'variables';
+@import 'mixins';
+.case-views {
+  padding-top: 140px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__title {
+    padding-bottom: 32px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 20px;
+    }
+  }
+  &__description {
+    max-width: 770px;
+    padding-bottom: 80px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 25px;
+    }
+  }
+  &__wrapper {
+    @include full-width;
+    position: relative;
+
+    @media screen and (max-width: $mobile) {
+      .swiper-container {
+        padding: 0 0px 0 16px;
+        width: 90%;
+        margin-left: 0;
+        overflow: initial;
+      }
+    }
+  }
+  &__image {
+    position: relative;
+    img,
+    span {
+      width: 100%;
+      display: block !important;
+    }
+  }
+  &__item {
+    span {
+      width: 100%;
+      display: block;
+      margin-bottom: 16px;
+    }
+  }
+  &__controller {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: $white;
+    border-radius: 26px;
+    z-index: 2;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+    svg {
+      fill: $green_main;
+      flex-shrink: 0;
+      margin-right: 17px;
+    }
+    &:hover:not(&--active) {
+      background-color: $green_main;
+      color: $white;
+      svg {
+        fill: $white;
+      }
+    }
+    &--active {
+      background-color: $green_main;
+      color: $white;
+      svg {
+        fill: $white;
+      }
+    }
+  }
+  &__note {
+    max-width: 1000px;
+    margin: 100px auto 0;
+    @media screen and (max-width: $mobile) {
+      margin: 60px 0 0;
+    }
+  }
+  &__note-title {
+    padding-bottom: 45px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 32px;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+query Ideas(
+  $is_home: Boolean
+  $limit: Int
+  $offset: Int
+  $slug: String
+  $tags: [String]
+) {
+  ideas(
+    is_home: $is_home
+    limit: $limit
+    offset: $offset
+    slug: $slug
+    tags: $tags
+  ) {
+    pagination {
+      total
+      is_last
+    }
+    data {
+      title
+      slug
+      id
+      label
+      description
+      image {
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

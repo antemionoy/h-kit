@@ -1,0 +1,12 @@
+.header-item-technique {
+  &__wrapper {
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    flex-wrap: wrap;
+  }
+  & &__card {
+    width: calc(25% - 25px);
+  }
+}

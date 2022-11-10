@@ -1,0 +1,16 @@
+.step-2 {
+  padding-top: 120px;
+  @media screen and (max-width: $mobile) {
+    padding-top: 100px;
+  }
+  &__modal.modal__body {
+    height: 554px;
+    @include tablet {
+      height: 652px;
+    }
+
+    @include mobile {
+      height: 100%;
+    }
+  }
+}

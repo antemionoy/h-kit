@@ -1,0 +1,17 @@
+query HomeRecommeded {
+  home_recommended {
+    id
+    title
+    slug
+    description
+    discount_price
+    price
+    preview {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

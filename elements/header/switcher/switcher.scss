@@ -1,0 +1,26 @@
+@import 'variables'; @import 'mixins';
+
+.header-switcher {
+  width: 150px;
+  height: 48px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 32px;
+  background-color: $white_main;
+  &__item {
+    cursor: pointer;
+    background-color: inherit;
+    border-radius: inherit;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $black_common;
+    transition: color 0.3s ease 0s, background-color 0.3s ease 0s;
+    &--active {
+      background-color: $green_main;
+      color: $green_common
+    }
+  }
+}

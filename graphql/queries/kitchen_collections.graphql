@@ -1,0 +1,24 @@
+query KitchenCollections {
+  kitchen_collections {
+    id
+    caption
+    name
+    summary
+    button_text
+    slug
+    kitchens {
+      id
+      title
+      slug
+      price
+      discount_price
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

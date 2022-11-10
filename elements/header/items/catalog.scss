@@ -1,0 +1,50 @@
+@import 'variables'; @import 'mixins';
+
+.header-item-catalog {
+  &__wrapper {
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list {
+    width: calc(50% - 25px);
+  }
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 80px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__title {
+    min-width: 140px;
+    .h4 {
+      transition: color 0.3s ease 0s;
+      flex-shrink: 0;
+      margin-right: 30px;
+      &:hover {
+        color: $green_main;
+      }
+    }
+  }
+  &__rows {
+    display: flex;
+    align-items: flex-start;
+  }
+  &__row {
+    min-width: 180px;
+    margin-right: 28px;
+  }
+  &__link {
+    transition: color 0.3s ease 0s;
+    margin-bottom: 8px;
+    &:hover {
+      color: $green_main;
+    }
+  }
+  & &__card {
+    width: calc(25% - 25px);
+  }
+}

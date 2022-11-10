@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'mixins';
+
+.articles {
+  &__quote {
+    padding-bottom: 37px;
+    @include mobile {
+      padding-bottom: 0;
+    }
+  }
+
+  &__ideas {
+    margin-bottom: 100px;
+
+    @include mobile {
+      margin-bottom: 42px;
+    }
+  }
+
+  .more {
+    padding-top: 30px;
+    @include mobile {
+      padding-top: 0;
+    }
+  }
+}
+
+.quote {
+  max-width: 1000px;
+  margin: 0 auto;
+  &__text {
+    margin-bottom: 58px;
+    @include mobile {
+      margin-bottom: 32px;
+    }
+  }
+}

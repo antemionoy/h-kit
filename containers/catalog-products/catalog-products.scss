@@ -1,0 +1,55 @@
+@import 'variables';
+
+.catalog-products {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  transition: transform 0.3s ease 0s;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 32px;
+    margin-bottom: 40px;
+  }
+  &__title {
+    padding-bottom: 50px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 24px;
+    }
+  }
+  &__list {
+    display: flex;
+    padding-bottom: 27px;
+    flex-wrap: wrap;
+    @media screen and (max-width: $mobile) {
+      flex-wrap: nowrap;
+      padding-bottom: 28px;
+      overflow-x: scroll;
+      margin-left: -16px;
+      margin-right: -16px;
+      padding-left: 16px;
+    }
+  }
+  &__link {
+    margin-right: 80px;
+    margin-bottom: 13px;
+    @media screen and (max-width: $mobile) {
+      margin-right: 40px;
+      margin-bottom: 0;
+      &:last-child {
+        padding-right: 16px;
+      }
+    }
+    &:hover {
+      cursor: pointer;
+      color: $green_main;
+    }
+  }
+  &__subtitle {
+    color: $black_common;
+    &--active {
+      color: $black;
+    }
+  }
+  &__description {
+    max-width: 695px;
+  }
+}

@@ -1,0 +1,62 @@
+@import 'variables'; @import 'mixins';
+
+.credit {
+  background-color: $white_main;
+  padding-top: 115px;
+  padding-bottom: 115px;
+  @media screen and (max-width: $tablet) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+  @media screen and (max-width: $mobile) {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+  &__wrapper {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $tablet) {
+      display: block;
+    }
+  }
+  &__title {
+    max-width: 230px;
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 55px;
+    }
+  }
+  &__list {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -38px;
+    max-width: 720px;
+    @media screen and (max-width: $tablet) {
+      display: block;
+      margin-bottom: 55px;
+    }
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 35px;
+    }
+  }
+  &__item {
+    width: calc(50% - 30px);
+    margin-bottom: 38px;
+    @media screen and (max-width: $tablet) {
+      width: auto;
+    }
+    @media screen and (max-width: $mobile) {
+      margin-bottom: 20px;
+    }
+  }
+  &__button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @media screen and (max-width: $tablet) {
+      position: static;
+    }
+  }
+}

@@ -1,0 +1,60 @@
+@import 'variables';
+@import 'mixins';
+
+.technic {
+  .product-main {
+    padding-top: 41px;
+    &__info {
+      margin-right: 0;
+    }
+    &__title {
+      padding-bottom: 33px;
+    }
+    &__row-title {
+      margin-right: 39px;
+    }
+    &__advantages {
+      columns: auto;
+      display: flex;
+      flex-wrap: wrap;
+
+      &-item {
+        &:nth-child(2n - 1) {
+          margin-right: 94px;
+        }
+        margin-bottom: 7px;
+        svg {
+          margin-right: 9px;
+        }
+      }
+    }
+  }
+  .wide-slider {
+    margin-bottom: 141px;
+    @include mobile {
+      margin-bottom: 62px;
+    }
+    &__description {
+      max-width: 626px;
+    }
+    &__content {
+      padding-bottom: 55px;
+    }
+    &__title {
+      max-width: 550px;
+      font-size: 40px;
+      @include mobile {
+        font-size: 26px;
+      }
+    }
+  }
+  .product-proposal {
+    margin-top: 136px;
+    @include mobile {
+      margin-top: 62px;
+    }
+    &__title {
+      padding-bottom: 46px;
+    }
+  }
+}

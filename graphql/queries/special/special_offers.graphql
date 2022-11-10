@@ -1,0 +1,34 @@
+query SpecialOffers($slug: String) {
+  special_offers(slug: $slug) {
+    data {
+      id
+      title
+      slug
+      description
+      label
+      content
+      conditions
+      button_text
+      link
+      image {
+        path {
+          normal
+          retina
+        }
+      }
+      related {
+        id
+        title
+        slug
+        description
+        label
+        image {
+          path {
+            normal
+            retina
+          }
+        }
+      }
+    }
+  }
+}

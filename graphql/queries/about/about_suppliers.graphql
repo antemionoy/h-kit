@@ -1,0 +1,12 @@
+query AboutSuppliers {
+  about_suppliers {
+    id
+    image {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

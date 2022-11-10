@@ -1,0 +1,57 @@
+query KitchenFilter {
+  kitchen_filter {
+    form {
+      name
+      slug
+      icon {
+        id
+        name
+        path {
+          normal
+          retina
+        }
+      }
+    }
+    color {
+      name
+      slug
+      icon {
+        id
+        name
+        path {
+          normal
+          retina
+        }
+      }
+    }
+    facade {
+      name
+      slug
+    }
+    style {
+      name
+      slug
+    }
+    price {
+      min
+      max
+    }
+    tabletop {
+      name
+      slug
+    }
+    size {
+      name
+      slug
+    }
+    tags {
+      id
+      name
+      slug
+    }
+    order {
+      name
+      slug
+    }
+  }
+}

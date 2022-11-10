@@ -1,0 +1,143 @@
+@import 'variables';
+
+.header {
+  position: relative;
+  padding-bottom: 123px;
+  @media screen and (max-width: $tablet) {
+    padding-bottom: 57px;
+  }
+
+  &__wrapper {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: $white_main;
+  }
+
+  .header-topLine {
+    display: flex;
+    justify-content: space-between;
+
+    &__item {
+      display: flex;
+    }
+    &__item--nav {
+      margin: 0 -16px;
+    }
+    &__link {
+      margin: 0 16px;
+      text-align: center;
+    }
+  }
+  .header-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s ease 0s;
+    z-index: 10;
+    background-color: $white;
+    &--top {
+      transform: translateY(-44px);
+    }
+  }
+
+  &__nav {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid $white_main;
+
+    @media screen and (max-width: $tablet) {
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+  .header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      margin: 0 -16px;
+    }
+    &__link {
+      margin: 0 16px;
+      position: relative;
+      text-align: center;
+      z-index: 5;
+      &:last-of-type {
+        margin-right: 0;
+      }
+    }
+    &__burger {
+      flex-shrink: 0;
+      margin-right: 9px;
+    }
+    &__form {
+      padding: 0 16px 0 32px;
+      z-index: 5;
+      & > button {
+        position: relative;
+        z-index: 5;
+      }
+    }
+    &__logo-wrap {
+      flex: 1;
+      position: relative;
+      z-index: 5;
+      margin-right: 16px;
+    }
+    &__logo-link {
+      display: inline-block;
+    }
+    &__logo {
+      display: inline-block;
+    }
+  }
+  .header-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    min-height: 400px;
+    // transition: opacity 0.3s ease 0s;
+    opacity: 0;
+    pointer-events: none;
+    background-color: $white;
+    border-bottom: 1px solid $white_main;
+    z-index: 3;
+    &--active {
+      pointer-events: initial;
+      opacity: 1;
+    }
+    &__close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 40px;
+      background-color: $white_main;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+  }
+  .header-item {
+    position: relative;
+    padding-top: 56px;
+    padding-bottom: 120px;
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0%;
+      right: 0;
+      height: 80px;
+      transform: translateY(-100%);
+    }
+  }
+}

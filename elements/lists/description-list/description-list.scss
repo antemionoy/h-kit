@@ -1,0 +1,34 @@
+@import 'variables'; @import 'mixins';
+
+.description-list {
+  &__header {
+
+    &:not(:last-child) {
+      margin-bottom: 24px;
+
+      td {
+        padding-bottom: 24px;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 48px;
+
+      td {
+        padding-top: 48px;
+      }
+    }
+
+    td {
+      width: 66%;
+    }
+
+    td:last-child {
+      text-align: right;
+    }
+  }
+
+  &__text, &__text td {
+    width: 100%;
+  }
+}

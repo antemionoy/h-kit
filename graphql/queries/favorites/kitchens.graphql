@@ -1,0 +1,38 @@
+query Kitchens($ids: [Int], $limit: Int, $offset: Int = 0) {
+  kitchens(ids: $ids, limit: $limit, offset: $offset) {
+    data {
+      id
+      title
+      description
+      price
+      discount_price
+      slug
+      area
+      price_pm
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      materials {
+        color
+        material {
+          id
+          title
+          slug
+          category {
+            slug
+          }
+        }
+        image {
+          path {
+            normal
+            retina
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+query Cases {
+  cases {
+    pagination {
+      total
+    }
+    data {
+      slug
+    }
+  }
+}

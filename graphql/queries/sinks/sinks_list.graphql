@@ -1,0 +1,52 @@
+query Sinks(
+  $limit: Int
+  $offset: Int
+  $category: String
+  $tags: [String]
+  $ids: [Int]
+) {
+  sinks(
+    limit: $limit
+    offset: $offset
+    category: $category
+    tags: $tags
+    ids: $ids
+  ) {
+    pagination {
+      limit
+      offset
+      total
+      is_last
+    }
+    data {
+      id
+      type
+      title
+      slug
+      description
+      price
+      summary
+      discount_price
+      category {
+        id
+        name
+        slug
+        description
+      }
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      preview_hover {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

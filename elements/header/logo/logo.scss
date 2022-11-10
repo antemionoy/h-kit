@@ -1,0 +1,19 @@
+@import 'variables';
+@import 'mixins';
+
+.logo {
+  svg {
+    width: 87px;
+    height: 26px;
+    @media screen and (max-width: $tablet) {
+      width: 56px;
+      height: 16px;
+    }
+  }
+  p {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 140%;
+    color: $black_title;
+  }
+}

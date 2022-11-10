@@ -1,0 +1,168 @@
+@import 'variables';
+@import 'mixins';
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 500;
+  line-height: 120%;
+  color: $black_title;
+  transition: color 0.3s ease 0s;
+
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.h1 {
+  font-size: 60px;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 26px;
+  }
+
+  &__icon,
+  &__icon.button-pair__icon {
+    margin-left: 20px;
+    width: 49px;
+    height: 49px;
+
+    @media screen and (max-width: $mobile) {
+      margin-left: 10px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+}
+
+.h2 {
+  font-size: 40px;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 26px;
+  }
+}
+
+.h3 {
+  font-size: 28px;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 20px;
+  }
+}
+
+.h4 {
+  font-size: 20px;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.h5 {
+  font-size: 11px;
+  line-height: 120%;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.h6 {
+  font-size: 20px;
+  font-weight: 400;
+
+  @media screen and (max-width: $mobile) {
+    font-size: 16px;
+  }
+}
+
+.fav {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  color: $black_title;
+
+  &:hover {
+    color: $green_main;
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: -7px;
+    right: -7px;
+    bottom: -10px;
+  }
+
+  svg {
+    width: 18px;
+    height: 17px;
+    fill: transparent;
+    transition: fill 0.3s ease;
+  }
+
+  &--active {
+    color: $green-main;
+
+    svg {
+      fill: $green_main;
+    }
+  }
+
+  &--inverted {
+    width: 60px;
+    height: 60px;
+    border-radius: 4px;
+    background-color: $green_main;
+    color: $white;
+
+    &::after {
+      display: none;
+    }
+
+    svg {
+      width: 23px;
+      height: 23px;
+
+      @include mobile {
+        width: 21px;
+        height: 21px;
+      }
+    }
+
+    @include min-mobile {
+      &:hover {
+        color: $green-common;
+
+        svg {
+          fill: $green-common;
+        }
+      }
+    }
+
+    &.fav--active svg {
+      fill: $white;
+
+      @include mobile {
+        fill: $green_main;
+      }
+    }
+
+    &.fav-kitchen--active svg {
+      fill: $white;
+    }
+
+    @include mobile {
+      background-color: transparent;
+      border-radius: 0;
+      color: $green_main;
+    }
+  }
+}

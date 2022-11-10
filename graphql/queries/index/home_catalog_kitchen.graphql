@@ -1,0 +1,29 @@
+query HomeCatalogKitchen {
+  home_catalog_kitchen {
+    title
+    description
+    button_text
+    link
+    images {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+    kitchens {
+      id
+      title
+      slug
+      price
+      discount_price
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

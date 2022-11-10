@@ -1,0 +1,91 @@
+query Sinks($slug: String) {
+  sinks(slug: $slug) {
+    data {
+      id
+      type
+      title
+      slug
+      summary
+      description
+      price
+      discount_price
+      features
+      specifications
+      category {
+        id
+        name
+        slug
+        description
+      }
+      images {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      related {
+        id
+        type
+        title
+        slug
+        summary
+        category {
+          id
+          name
+          slug
+          description
+        }
+        preview {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        preview_hover {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      accessories {
+        id
+        type
+        title
+        slug
+        category {
+          slug
+        }
+        summary
+        preview {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        preview_hover {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+      sliders {
+        title
+        description
+        images {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+    }
+  }
+}

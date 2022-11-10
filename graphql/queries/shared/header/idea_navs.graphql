@@ -1,0 +1,19 @@
+query IdeaNavs {
+  idea_navs {
+    type
+    article {
+      id
+      title
+      slug
+      label
+      description
+      image {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

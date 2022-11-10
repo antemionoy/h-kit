@@ -1,0 +1,16 @@
+query SliderCatalog {
+  slider_catalog {
+    id
+    image {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+    title
+    caption
+    button_text
+    link
+  }
+}

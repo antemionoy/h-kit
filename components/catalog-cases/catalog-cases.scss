@@ -1,0 +1,7 @@
+.catalog-cases {
+  padding-top: 160px;
+
+  @media screen and (max-width: $mobile) {
+    padding-top: 60px;
+  }
+}

@@ -1,0 +1,12 @@
+query AboutSliders {
+  about_sliders {
+    id
+    image {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

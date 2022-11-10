@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'mixins';
+.production-main {
+  padding-top: 80px;
+  &__image {
+    @include full-width;
+    span,
+    img {
+      max-height: calc(100vh - 100px);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      @include mobile {
+        max-height: none;
+      }
+    }
+  }
+  @media screen and (max-width: $mobile) {
+    padding-top: 50px;
+  }
+  &__title {
+    padding-bottom: 40px;
+    max-width: 400px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 65px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 50px;
+      display: block;
+    }
+  }
+  &__description {
+    max-width: 515px;
+    flex: 1;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 35px;
+    }
+  }
+  &__list {
+    display: flex;
+    margin: 0 -34px;
+    flex-shrink: 0;
+    margin-left: 30px;
+    @media screen and (max-width: $mobile) {
+      margin: 0;
+      justify-content: space-between;
+    }
+  }
+  &__list-item {
+    margin: 0 34px;
+    @media screen and (max-width: $mobile) {
+      margin: 0;
+    }
+  }
+  &__list-title {
+    margin-bottom: 5px;
+  }
+  &__video {
+    @include full-width;
+  }
+  &__preview {
+    position: relative;
+    padding-bottom: 46.1%;
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+    @include full-width;
+  }
+
+  &__note {
+    padding-top: 120px;
+    max-width: 1000px;
+    margin: 0 auto;
+    @media screen and (max-width: $mobile) {
+      margin: 0;
+      padding-top: 100px;
+    }
+  }
+  &__note-title {
+    padding-bottom: 45px;
+    @media screen and (max-width: $mobile) {
+      padding-bottom: 32px;
+    }
+  }
+}

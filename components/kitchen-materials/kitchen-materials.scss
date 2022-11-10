@@ -1,0 +1,218 @@
+@import 'variables';
+@import 'mixins';
+.kitchen-materials {
+  display: flex;
+  margin-top: 160px;
+  @media screen and (max-width: $tablet) {
+    margin-top: 60px;
+    display: block;
+  }
+  &__content {
+    margin-left: $margin-desktop--neg;
+    padding-left: $margin-desktop;
+    flex-grow: 1;
+    background-color: $white_main;
+    padding-top: 140px;
+    padding-bottom: 100px;
+    @include container {
+      margin-left: -$padding-desktop;
+      padding-left: $padding-desktop;
+    }
+    @media screen and (max-width: $tablet) {
+      margin-left: -$padding-tablet;
+      padding-left: $padding-tablet;
+    }
+
+    @media screen and (max-width: $tablet) {
+      padding-right: 40px;
+      width: 50%;
+    }
+
+    @media screen and (max-width: $tablet) {
+      margin-left: -$padding-tablet;
+      padding-left: $padding-tablet;
+      padding-top: 40px;
+      padding-bottom: 0;
+      width: 100%;
+      background-color: transparent;
+    }
+    @include mobile {
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: $padding-mobile;
+      padding-right: $padding-mobile;
+    }
+  }
+  &__interactive {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+  &__title {
+    max-width: 440px;
+    margin-bottom: 40px;
+  }
+  &__description {
+    margin-bottom: 110px;
+    max-width: 440px;
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 40px;
+    }
+  }
+  &__button {
+    // @media screen and (max-width: $tablet) {
+    //   margin: 0 16px;
+    // }
+  }
+  &__list {
+    margin-bottom: 45px;
+  }
+  &__list-item {
+    color: $black_common;
+    margin-bottom: 30px;
+    transition: color 0.3s ease 0s;
+    cursor: pointer;
+    &--active {
+      color: $black;
+    }
+    @media screen and (max-width: $tablet) {
+      margin-bottom: 20px;
+    }
+  }
+  &__image {
+    position: relative;
+    @media screen and (max-width: $tablet) {
+      // width: calc(100% - 32px);
+      margin: 0 auto;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__image-selected {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
+    &--active {
+      opacity: 1;
+    }
+  }
+  &__slider {
+    width: 100%;
+    padding: 0px 150px 0px;
+    margin-top: 50px;
+    position: relative;
+    height: 60px;
+    @media screen and (max-width: $tablet) {
+      width: calc(100% + #{$padding-tablet * 2});
+      padding: 0 90px 0;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+
+      &::after {
+        display: block;
+        content: '';
+        min-width: 16px;
+        height: 60px;
+      }
+    }
+    @media screen and (max-width: $mobile) {
+      width: calc(100% + #{$padding-mobile * 2});
+      padding: 0 16px 0;
+    }
+  }
+  &__slider-item {
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    max-width: 68px;
+    min-height: 32px;
+    min-width: 32px;
+    @media screen and (max-width: $tablet) {
+      width: 60px;
+      min-width: 60px;
+    }
+    span {
+      position: absolute;
+      display: block;
+      width: calc(100% - 10px);
+      height: calc(100% - 10px);
+      left: -5px;
+      top: -5px;
+      object-fit: cover;
+      max-height: 80px;
+      overflow: hidden;
+      border-radius: inherit;
+      margin: 10px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+    }
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border-radius: inherit;
+      width: 100%;
+      height: 100%;
+      border: 2px solid $green_main;
+      opacity: 0;
+      transition: opacity 0.3s ease 0s;
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+    &--active::after {
+      opacity: 1;
+    }
+  }
+  &__slider-control {
+    position: absolute;
+    left: calc(0px + 80px);
+    bottom: 0;
+    width: 80px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $green_main;
+    cursor: pointer;
+    svg {
+      transition: transform 0.3s ease 0s;
+    }
+    &:hover svg {
+      transform: scale(1.2);
+    }
+    &--right {
+      left: auto;
+      right: calc(0px + 80px);
+      svg {
+        transform: scale(-1, 1);
+      }
+      &:hover svg {
+        transform: scale(-1.2, 1.2);
+      }
+    }
+  }
+}

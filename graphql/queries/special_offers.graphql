@@ -1,0 +1,38 @@
+query SpecialOffers(
+  $slug: String
+  $tags: [String]
+  $is_home: Boolean
+  $limit: Int
+  $offset: Int = 0
+  $is_highlight: Boolean
+) {
+  special_offers(
+    slug: $slug
+    tags: $tags
+    is_home: $is_home
+    limit: $limit
+    offset: $offset
+    is_highlight: $is_highlight
+  ) {
+    pagination {
+      limit
+      offset
+      total
+      is_last
+    }
+    data {
+      id
+      title
+      slug
+      description
+      label
+      content
+      image {
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}

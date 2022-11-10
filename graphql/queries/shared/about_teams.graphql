@@ -1,0 +1,14 @@
+query AboutTeam($width: Int = 800, $height: Int = 1000) {
+  about_teams {
+    id
+    name
+    description
+    image {
+      id
+      path(width: $width, height: $height) {
+        normal
+        retina
+      }
+    }
+  }
+}

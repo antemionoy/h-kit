@@ -1,0 +1,3 @@
+mutation WarrantyQuestion($name: String!, $phone: String!, $message: String!) {
+  WarrantyQuestion(name: $name, phone: $phone, message: $message)
+}

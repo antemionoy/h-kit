@@ -1,0 +1,60 @@
+query Materials(
+  $limit: Int
+  $offset: Int = 0
+  $category: String
+  $tags: [String]
+  $ids: [Int]
+) {
+  materials(
+    limit: $limit
+    offset: $offset
+    category: $category
+    tags: $tags
+    ids: $ids
+  ) {
+    pagination {
+      limit
+      offset
+      total
+      is_last
+    }
+    data {
+      id
+      material {
+        id
+        type
+        category {
+          id
+          name
+          slug
+          description
+        }
+        title
+        slug
+        price
+        discount_price
+        summary
+        materials
+        features
+        colors {
+          color
+        }
+        count_color
+        preview {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+        preview_hover {
+          id
+          path {
+            normal
+            retina
+          }
+        }
+      }
+    }
+  }
+}

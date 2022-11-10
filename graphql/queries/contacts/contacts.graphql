@@ -1,0 +1,14 @@
+query Contacts {
+  contacts {
+    id
+    city
+    slug
+    address
+    phone
+    working_time
+    coordinates {
+      lat
+      lng
+    }
+  }
+}

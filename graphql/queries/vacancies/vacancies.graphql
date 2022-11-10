@@ -1,0 +1,18 @@
+query Vacancies {
+  vacancies {
+    id
+    name
+    slug
+    vacancies {
+      id
+      name
+      description
+      experience
+      salary
+      working_time
+      tasks
+      conditions
+      requirements
+    }
+  }
+}

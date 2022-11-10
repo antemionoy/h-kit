@@ -1,0 +1,85 @@
+@import 'variables';
+@import 'mixins';
+
+$textarea-padding: 25px;
+
+.textarea {
+  position: relative;
+  background-color: $white_main;
+  &--error {
+    box-shadow: 0 0px 0px 1px $red_error;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    min-height: 153px;
+    padding: $textarea-padding 28px 0;
+    font-size: 16px;
+    color: $black_text;
+    border: none;
+    background: none;
+    resize: none;
+    outline: none;
+    line-height: 26px;
+  }
+  &__placeholder {
+    position: absolute;
+    pointer-events: none;
+    left: 28px;
+    top: 30px;
+    transform: translate(0, -50%);
+    font-size: 16px;
+    color: $black_common;
+    appearance: none;
+    will-change: transform;
+    transition: transform 0.3s ease 0s;
+    transform-origin: left;
+    &--active {
+      transform: translate(0%, -115%) scale(0.7);
+    }
+  }
+  & + .form-error {
+    position: absolute;
+    margin-top: 5px;
+    transform: scaleY(0);
+    //padding-left: 28px;
+    font-size: 12px;
+    color: $red_error;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s, transform 0s;
+    &--active {
+      position: static;
+      opacity: 1;
+      transform: scaleY(1);
+      transition: opacity 0.3s ease 0s, transform 0s linear 0.3s;
+    }
+  }
+  textarea:focus + &__placeholder {
+    transform: translate(0%, -115%) scale(0.7);
+  }
+  &--small &__placeholder {
+    font-size: 13px;
+  }
+  &--small textarea {
+    font-size: 13px;
+  }
+  &::before {
+    position: absolute;
+    display: block;
+    content: '';
+    height: $textarea-padding;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: $white_main;
+  }
+
+  &--white {
+    background-color: $white;
+    &::before {
+      background-color: $white;
+    }
+  }
+}

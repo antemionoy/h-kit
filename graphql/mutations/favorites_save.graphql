@@ -1,0 +1,15 @@
+mutation FavoriteSave(
+  $kitchens: [Int]
+  $materials: [Int]
+  $sinks: [Int]
+  $technics: [Int]
+) {
+  FavoriteSave(
+    kitchens: $kitchens
+    materials: $materials
+    sinks: $sinks
+    technics: $technics
+  ) {
+    slug
+  }
+}

@@ -1,0 +1,97 @@
+@import 'variables';
+@import 'mixins';
+
+.career {
+  &__partnership {
+    margin-top: 119px;
+
+    @include tablet {
+      margin-top: 90px;
+    }
+    @include mobile {
+      margin-top: 60px;
+    }
+
+    &-title {
+      max-width: 500px;
+    }
+
+    &-content {
+      display: flex;
+      margin-top: 69px;
+
+      @include tablet {
+        flex-direction: column;
+      }
+    }
+    &-slider {
+      width: 50%;
+      padding-right: 6%;
+
+      .swiper-pagination {
+        bottom: 12px;
+        display: none;
+        @include mobile {
+          display: block;
+        }
+      }
+
+      @include tablet {
+        width: 100%;
+        padding-right: 0;
+      }
+    }
+    &-controls {
+      margin-top: 40px;
+      display: flex;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-control {
+      margin-right: 12px;
+    }
+    &-data {
+      width: 100%;
+      padding-left: 1%;
+      @include tablet {
+        padding-left: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-top: 40px;
+      }
+    }
+
+    &-reasons {
+      width: 100%;
+      @include tablet {
+        width: 48%;
+      }
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &-par {
+      margin-top: 23px;
+      margin-bottom: 40px;
+      max-width: 95%;
+      line-height: 160%;
+      min-height: 60px;
+
+      @include tablet {
+        max-width: 100%;
+      }
+    }
+    &-slider-item {
+      background: center center/cover;
+      &:after {
+        content: '';
+        display: block;
+        padding-bottom: 75%;
+      }
+    }
+  }
+}

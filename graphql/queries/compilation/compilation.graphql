@@ -1,0 +1,52 @@
+query KitchenCollection($slug: String, $price_order: String) {
+  kitchen_collections(slug: $slug, price_order: $price_order) {
+    id
+    caption
+    name
+    slug
+    summary
+    button_text
+    kitchens {
+      id
+      title
+      price
+      discount_price
+      preview {
+        path {
+          normal
+          retina
+        }
+      }
+      slug
+      preview_video
+    }
+    image {
+      id
+      path {
+        normal
+        retina
+      }
+    }
+    related {
+      id
+      caption
+      name
+      summary
+      button_text
+      slug
+      kitchens {
+        id
+        preview {
+          path {
+            normal
+            retina
+          }
+        }
+        title
+        slug
+        price
+        discount_price
+      }
+    }
+  }
+}

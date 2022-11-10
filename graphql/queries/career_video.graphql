@@ -1,0 +1,6 @@
+query Settings {
+  settings {
+    career_preview
+    career_video
+  }
+}

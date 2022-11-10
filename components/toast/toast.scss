@@ -1,0 +1,44 @@
+@import 'variables';
+@import 'mixins';
+
+.toast {
+  &-wrapper {
+    position: fixed;
+    bottom: 0;
+    background: $black_title;
+    opacity: 0;
+    z-index: 600;
+    left: 50%;
+    border-radius: 50px;
+    transform: translate(-50%, 100%);
+    padding: 16px 27px 18px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    transition: opacity 0.3s ease 0s, transform 0.3s ease 0s,
+      bottom 0.3s ease 0s;
+    color: $white;
+    min-width: 320px;
+    width: fit-content;
+    &-active {
+      bottom: 40px;
+      display: flex;
+      transform: translate(-50%, 0);
+      opacity: 0.9;
+    }
+  }
+
+  &-wrapper > &-close {
+    position: static;
+    background: $black_title;
+    transform: scale(1.2);
+    margin-left: 12px;
+    &:after,
+    &:before {
+      background: $white;
+    }
+  }
+}

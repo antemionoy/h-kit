@@ -1,0 +1,11 @@
+query Certificates {
+  certificates {
+    id
+    image {
+      path {
+        normal
+        retina
+      }
+    }
+  }
+}

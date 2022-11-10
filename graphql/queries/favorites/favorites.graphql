@@ -1,0 +1,124 @@
+query Favorite($slug: String) {
+  favorite(slug: $slug) {
+    kitchens {
+      id
+      title
+      description
+      price
+      discount_price
+      slug
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      materials {
+        color
+        material {
+          id
+          title
+          slug
+          category {
+            slug
+          }
+        }
+        image {
+          path {
+            normal
+            retina
+          }
+        }
+      }
+    }
+    materials {
+      id
+      type
+      category {
+        id
+        name
+        slug
+        description
+      }
+      title
+      slug
+      summary
+      description
+      materials
+      features
+      colors {
+        color
+      }
+      count_color
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      preview_hover {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+    sinks {
+      id
+      type
+      title
+      slug
+      description
+      category {
+        id
+        name
+        slug
+        description
+      }
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      preview_hover {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+    technics {
+      id
+      type
+      title
+      slug
+      description
+      category {
+        id
+        name
+        slug
+        description
+      }
+      preview {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+      preview_hover {
+        id
+        path {
+          normal
+          retina
+        }
+      }
+    }
+  }
+}
